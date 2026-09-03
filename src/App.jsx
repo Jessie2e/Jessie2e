@@ -60,23 +60,47 @@ export default function App() {
     return Object.keys(currentErrors).length === 0;
   };
 
-  // This currently validates and displays a success message locally.
-  // Connect this function to Formspree before using the form publicly.
-  const handleSubmit = (event) => {
-    event.preventDefault();
+const handleSubmit = async (event) => {
+  event.preventDefault();
 
-    if (validateForm()) {
-      setIsSubmitted(true);
-      setFormState({
-        name: '',
-        email: '',
-        projectType: '',
-        message: '',
-      });
+  if (!validateForm()) return;
 
-      setTimeout(() => setIsSubmitted(false), 6000);
+  try {
+    const response = await fetch("https://formspree.io/f/xdeozrrz", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: formState.name,
+        email: formState.email,
+        projectType: formState.projectType,
+        message: formState.message,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Form submission failed.");
     }
-  };
+
+    setIsSubmitted(true);
+
+    setFormState({
+      name: "",
+      email: "",
+      projectType: "",
+      message: "",
+    });
+
+    setTimeout(() => setIsSubmitted(false), 6000);
+  } catch (error) {
+    console.error(error);
+    alert(
+      "Something went wrong sending your message. Please email me directly at jessietowey@gmail.com."
+    );
+  }
+};
 
   return (
     <>
