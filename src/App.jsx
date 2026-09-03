@@ -574,11 +574,7 @@ const handleSubmit = async (event) => {
 
       <div className="services-header-copy">
         <p>
-          Not every business needs the same website.
-          I design around what’s actually useful—whether
-          you’re starting from scratch, improving what you
-          already have, or adding the pieces that make the
-          whole experience work better.
+          Not every business needs the same website. I design around what’s actually useful—whether you’re starting from scratch, improving what you already have, or adding the pieces that make the whole experience work better. Based near Smith Lake in Arley, Alabama, 2e Studio creates affordable custom websites for small businesses, artists, and independent brands across North Alabama, including Cullman, Jasper, and Birmingham.
         </p>
       </div>
 
