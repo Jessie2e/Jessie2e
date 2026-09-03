@@ -3,6 +3,7 @@ import CustomCursor from './components/CustomCursor';
 
 export default function App() {
   const [isBirdFlying, setIsBirdFlying] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -115,27 +116,59 @@ const handleSubmit = async (event) => {
 
       {/* Navigation */}
       <nav className="navbar">
-        <div
-          className="nav-logo-container"
-          onClick={triggerBirdEasterEgg}
-          title="Click the bird!"
-        >
-          <img
-            src="/2elogo.svg"
-            className="nav-logo"
-            alt="2e Studio bird logo"
-          />
-          <span>2e Studio</span>
-        </div>
+  <div
+    className="nav-logo-container"
+    onClick={triggerBirdEasterEgg}
+    title="Click the bird!"
+  >
+    <img
+      src="/2elogo.svg"
+      className="nav-logo"
+      alt="2e Studio bird logo"
+    />
+    <span>2e Studio</span>
+  </div>
 
-        <ul className="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#portfolio">Work</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <button
+    type="button"
+    className={`nav-toggle ${isNavOpen ? "open" : ""}`}
+    onClick={() => setIsNavOpen((open) => !open)}
+    aria-label="Toggle navigation"
+    aria-expanded={isNavOpen}
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <ul className={`nav-links ${isNavOpen ? "nav-links-open" : ""}`}>
+    <li>
+      <a href="#home" onClick={() => setIsNavOpen(false)}>
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#portfolio" onClick={() => setIsNavOpen(false)}>
+        Work
+      </a>
+    </li>
+    <li>
+      <a href="#services" onClick={() => setIsNavOpen(false)}>
+        Services
+      </a>
+    </li>
+    <li>
+      <a href="#about" onClick={() => setIsNavOpen(false)}>
+        About
+      </a>
+    </li>
+    <li>
+      <a href="#contact" onClick={() => setIsNavOpen(false)}>
+        Contact
+      </a>
+    </li>
+  </ul>
+</nav>
 
   {/* Hero */}
 <section id="home" className="studio-hero">
