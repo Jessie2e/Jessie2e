@@ -1028,15 +1028,11 @@ const handleSubmit = async (event) => {
       {isSubmitted && (
 
         <div className="success-alert">
+          <strong>Message sent!</strong>
+           Thanks for reaching out. I’ll get back to you as soon as I can.
+          </div>
 
-          <strong>Looks good!</strong>
-
-          Your form is validating correctly.
-          We’ll connect actual message delivery before launch.
-
-        </div>
-
-      )}
+          )}
 
 
       <form
