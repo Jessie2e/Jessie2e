@@ -1,0 +1,354 @@
+/* ========================================================================== 
+   2E STUDIO — FINAL BRAND LAYER
+   New identity built around the Recraft vector bird.
+   This file intentionally loads AFTER index.css so the brand system is
+   centralized while the older stylesheet is cleaned in a later pass.
+   ========================================================================== */
+
+:root {
+  /* Core 2e palette */
+  --twoe-plum: #602B47;
+  --twoe-charcoal: #1B1B1B;
+  --twoe-mustard: #D7A72C;
+  --twoe-sage: #788D72;
+  --twoe-moss: #526A54;
+  --twoe-coral: #D86656;
+  --twoe-blush: #C98C80;
+  --twoe-cream: #F2D8B3;
+  --twoe-paper: #FBF8F1;
+  --twoe-soft-sage: #EEF1E8;
+  --twoe-muted: #675E57;
+
+  /* Backwards-compatible aliases used throughout the existing site. */
+  --ink-navy: var(--twoe-plum);
+  --deep-neutral: var(--twoe-muted);
+  --soft-white: #FFFFFF;
+  --warm-ivory: var(--twoe-paper);
+  --teal-leaf: var(--twoe-sage);
+  --aqua-glow: var(--twoe-soft-sage);
+  --peach-clay: var(--twoe-coral);
+  --soft-peach: var(--twoe-cream);
+  --blush-accent: var(--twoe-blush);
+}
+
+html,
+body {
+  background: var(--twoe-paper);
+  color: var(--twoe-plum);
+}
+
+::selection {
+  background: var(--twoe-mustard);
+  color: var(--twoe-charcoal);
+}
+
+/* --------------------------------------------------------------------------
+   Brand mark + navigation
+   -------------------------------------------------------------------------- */
+.navbar {
+  background: rgba(251, 248, 241, 0.92);
+  border-bottom-color: rgba(96, 43, 71, 0.10);
+}
+
+.nav-logo-container {
+  color: var(--twoe-plum);
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.nav-links a {
+  color: var(--twoe-plum);
+}
+
+.nav-links a::after {
+  background: var(--twoe-sage);
+}
+
+.case-study-logo img,
+.soda-case-studio-logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Easter egg now uses the real 2e bird instead of the old teal mark. */
+.easter-egg-bird {
+  filter: drop-shadow(0 10px 18px rgba(96, 43, 71, 0.18));
+}
+
+/* Cursor is now a dusty vintage green. */
+.bird-cursor {
+  filter: drop-shadow(2px 5px 4px rgba(82, 106, 84, 0.24));
+}
+
+.bird-cursor.hovering {
+  filter: drop-shadow(4px 9px 7px rgba(82, 106, 84, 0.30));
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+#home.studio-hero {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(215, 167, 44, 0.10), transparent 23%),
+    radial-gradient(circle at 68% 72%, rgba(120, 141, 114, 0.10), transparent 29%),
+    var(--twoe-paper);
+}
+
+.studio-hero-eyebrow {
+  color: var(--twoe-sage);
+}
+
+.studio-hero-dot {
+  background: var(--twoe-coral);
+}
+
+.studio-hero-title,
+.studio-hero-founder strong,
+.studio-hero-text-link,
+.studio-hero-button-primary {
+  color: var(--twoe-plum);
+}
+
+.studio-hero-description,
+.studio-hero-founder p,
+.hero-work-caption {
+  color: var(--twoe-muted);
+}
+
+.studio-hero-button-primary {
+  background: var(--twoe-sage);
+  border-color: rgba(96, 43, 71, 0.12);
+  box-shadow: 0 5px 0 rgba(96, 43, 71, 0.08);
+}
+
+.studio-hero-button-primary:hover {
+  background: #83977D;
+  box-shadow: 0 8px 0 rgba(96, 43, 71, 0.09);
+}
+
+.studio-hero-text-link {
+  border-bottom-color: rgba(96, 43, 71, 0.72);
+}
+
+.studio-hero-founder-line {
+  background: rgba(96, 43, 71, 0.28);
+}
+
+.hero-work-caption span,
+.studio-hero-scroll span:last-child {
+  color: var(--twoe-coral);
+}
+
+.hero-project-window {
+  border-color: rgba(96, 43, 71, 0.10);
+  box-shadow: 0 16px 38px rgba(96, 43, 71, 0.10);
+}
+
+.hero-project-main:hover,
+.hero-project-susan:hover,
+.hero-project-soda:hover {
+  box-shadow: 0 22px 48px rgba(96, 43, 71, 0.14);
+}
+
+/* --------------------------------------------------------------------------
+   Selected work
+   -------------------------------------------------------------------------- */
+.work-section {
+  background: #F8F2E8;
+}
+
+.work-kicker,
+.project-type {
+  color: var(--twoe-sage);
+}
+
+.work-heading h2,
+.featured-project-copy h3,
+.secondary-project-copy h3,
+.work-link {
+  color: var(--twoe-plum);
+}
+
+.project-number {
+  color: var(--twoe-coral);
+}
+
+.featured-project {
+  background: var(--twoe-soft-sage);
+  border-color: rgba(96, 43, 71, 0.09);
+}
+
+.secondary-project {
+  border-color: rgba(96, 43, 71, 0.10);
+}
+
+.susan-project-visual,
+.soda-project-visual {
+  background: #EEE7DA;
+}
+
+.project-status-badge,
+.featured-project-status {
+  color: var(--twoe-plum);
+  background: var(--twoe-paper);
+  border-color: rgba(96, 43, 71, 0.11);
+  box-shadow: 0 4px 12px rgba(96, 43, 71, 0.05);
+}
+
+.work-tags span {
+  color: var(--twoe-muted);
+  border-color: rgba(96, 43, 71, 0.11);
+}
+
+/* --------------------------------------------------------------------------
+   Services
+   -------------------------------------------------------------------------- */
+.services-editorial {
+  background: #FFFFFF;
+}
+
+.services-kicker,
+.service-small-label {
+  color: var(--twoe-sage);
+}
+
+.services-editorial-header h2,
+.service-editorial-title h3,
+.service-editorial-lead,
+.services-editorial-cta strong,
+.services-editorial-cta a {
+  color: var(--twoe-plum) !important;
+}
+
+.service-editorial-number {
+  color: var(--twoe-coral);
+}
+
+.service-editorial-row,
+.service-editorial-row:last-of-type {
+  border-color: rgba(96, 43, 71, 0.15);
+}
+
+.service-editorial-row-featured {
+  background: rgba(120, 141, 114, 0.10);
+}
+
+.service-editorial-tags span {
+  border-color: rgba(96, 43, 71, 0.11);
+}
+
+.service-brand-addon {
+  background: var(--twoe-plum);
+}
+
+.service-brand-addon .service-small-label {
+  color: var(--twoe-mustard);
+}
+
+.service-brand-mark {
+  color: var(--twoe-cream);
+  border-color: rgba(242, 216, 179, 0.28);
+}
+
+/* --------------------------------------------------------------------------
+   Why 2e
+   -------------------------------------------------------------------------- */
+.why-2e {
+  background: var(--twoe-paper);
+}
+
+.why-2e-kicker,
+.why-2e-header h2 span,
+.why-2e-big-number {
+  color: var(--twoe-sage);
+}
+
+.why-2e-header h2,
+.why-2e-lead,
+.why-2e-item h3,
+.why-2e-experience p {
+  color: var(--twoe-plum) !important;
+}
+
+.why-2e-number {
+  color: var(--twoe-coral);
+}
+
+.why-2e-grid,
+.why-2e-item + .why-2e-item {
+  border-color: rgba(96, 43, 71, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   About
+   -------------------------------------------------------------------------- */
+.about-editorial {
+  background: #FFFFFF;
+}
+
+.about-kicker {
+  color: var(--twoe-sage);
+}
+
+.about-jessie-content h2,
+.about-editorial-lead,
+.about-jessie-copy em {
+  color: var(--twoe-plum) !important;
+}
+
+.about-editorial .about-capabilities {
+  border-color: rgba(96, 43, 71, 0.14);
+}
+
+.about-capabilities span:not(:last-child)::after {
+  color: var(--twoe-mustard);
+}
+
+/* --------------------------------------------------------------------------
+   Contact
+   -------------------------------------------------------------------------- */
+.contact-editorial {
+  background: var(--twoe-plum);
+}
+
+.contact-editorial .contact-kicker {
+  color: var(--twoe-mustard);
+}
+
+.contact-form-card {
+  background: var(--twoe-paper);
+}
+
+.contact-form-dot {
+  background: var(--twoe-coral);
+}
+
+.contact-submit {
+  color: var(--twoe-plum);
+  background: var(--twoe-sage);
+}
+
+.contact-form-editorial .form-control:focus {
+  border-color: var(--twoe-sage);
+}
+
+/* --------------------------------------------------------------------------
+   Small brand details / accessibility
+   -------------------------------------------------------------------------- */
+:focus-visible {
+  outline: 3px solid var(--twoe-mustard);
+  outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+  .nav-logo {
+    width: 42px;
+    height: 42px;
+  }
+}
