@@ -353,7 +353,7 @@ const handleSubmit = async (event) => {
   <div className="work-inner">
 
     <div className="work-heading">
-      <p className="work-kicker">Selected Work · 01—03</p>
+      <p className="work-kicker">Selected Work · 01—04</p>
 
       <h2>
         Built around the business.
@@ -546,6 +546,55 @@ const handleSubmit = async (event) => {
   </div>
 
 </article>
+
+
+      {/* ERYN DAVIS */}
+      <article className="secondary-project">
+
+        <div className="secondary-project-art eryn-project-visual">
+          <div className="project-status-badge">
+            In Development
+          </div>
+
+          <img
+            src="/eryn-davis/eryn-davis-cover.webp"
+            alt="Eryn Davis live entertainer website homepage"
+          />
+        </div>
+
+        <div className="secondary-project-copy">
+          <div className="project-meta-row">
+            <span className="project-number">04</span>
+
+            <span className="project-type">
+              Performer Website + Booking UX
+            </span>
+          </div>
+
+          <h3>Eryn Davis</h3>
+
+          <p>
+            A bold, high-energy performer website built to capture the
+            personality of the live show while making dates, performance
+            options, and booking easy to navigate.
+          </p>
+
+          <div className="work-tags">
+            <span>Web Design</span>
+            <span>Booking UX</span>
+            <span>Interactive Design</span>
+          </div>
+
+          <a
+            href="/work/eryn-davis"
+            className="work-link"
+          >
+            View Case Study
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+      </article>
 
     </div>
 

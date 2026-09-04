@@ -6,6 +6,7 @@ import App from './App.jsx'
 import InTheWoods from './components/InTheWoods.jsx'
 import SusanRipp from './components/SusanRipp.jsx'
 import SodaShop41 from './components/SodaShop41.jsx'
+import ErynDavis from './components/ErynDavis.jsx'
 
 import './index.css'
 import './brand.css'
@@ -34,6 +35,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   path="/work/soda-shop-41"
   element={<SodaShop41 />}
 />
+
+  <Route
+    path="/work/eryn-davis"
+    element={<ErynDavis />}
+  />
 
 </Routes>
     </BrowserRouter>
