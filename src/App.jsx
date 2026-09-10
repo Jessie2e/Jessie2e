@@ -818,8 +818,8 @@ const handleSubmit = async (event) => {
     <div className="services-editorial-cta">
 
       <p>
-        <strong>Not sure what you need?</strong>
-        Tell me what isn’t working.
+        <strong>Not sure what you need?</strong>{" "}
+         Tell me what isn’t working.
         I can help figure out the rest.
       </p>
 
