@@ -4144,7 +4144,7 @@ textarea.form-control {
   border-radius: 15px;
 
   box-shadow:
-    0 24px 60px rgba(82, 44, 42, 0.12);
+    0 28px 70px rgba(82, 44, 42, 0.16);
 
   text-decoration: none;
 
@@ -7866,7 +7866,7 @@ article + article {
 
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-
+    line-clamp: 2;
     line-height: 1.5;
   }
 
@@ -8637,5 +8637,147 @@ article + article {
   .secondary-project:hover .eryn-project-visual img,
   .eryn-case-button:hover {
     transform: none;
+  }
+}
+
+/* =========================================================
+   FINAL MOBILE HERO POLISH
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+  /* -----------------------------------------
+     HERO BUTTONS — SIDE BY SIDE
+     ----------------------------------------- */
+
+  .studio-hero-actions {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    gap: 12px;
+
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .studio-hero-button-primary {
+    flex: 0 0 auto;
+
+    padding: 13px 18px;
+
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  .studio-hero-text-link {
+    flex: 0 0 auto;
+
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+
+  /* -----------------------------------------
+     HERO PROJECT CARDS — BIGGER + OVERLAPPING
+     ----------------------------------------- */
+
+  .hero-work-preview {
+    width: 100%;
+    height: 425px;
+
+    margin: 8px auto 0;
+  }
+
+
+  /* SUSAN — upper/right */
+
+  .hero-project-susan {
+    width: 68%;
+
+    top: 22px;
+    right: -6%;
+
+    left: auto;
+    bottom: auto;
+
+    z-index: 3;
+
+    transform: rotate(1.5deg);
+  }
+
+
+  /* IN THE WOODS — largest / focal card */
+
+  .hero-project-main {
+    width: 89%;
+
+    top: 105px;
+    left: -2%;
+
+    right: auto;
+    bottom: auto;
+
+    z-index: 7;
+
+    transform: rotate(-1deg);
+  }
+
+
+  /* SODA SHOP — lower/right */
+
+  .hero-project-soda {
+    width: 73%;
+
+    top: 268px;
+    right: -3%;
+
+    left: auto;
+    bottom: auto;
+
+    z-index: 4;
+
+    transform: rotate(1.7deg);
+  }
+
+
+  /* slightly more compact browser bars */
+
+  .hero-window-bar {
+    height: 27px;
+  }
+}
+
+/* =========================================================
+   COMPACT PHONE POLISH — iPhone SE / similar
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  /* Lift "A FEW THINGS I'VE MADE" slightly */
+  .hero-work-caption {
+    top: -6px;
+  }
+
+  /* Pull Soda Shop upward toward the main card */
+  .hero-project-soda {
+    top: 245px;
+  }
+}
+
+/* =========================================================
+   COMPACT PHONE — SERVICES POLISH
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .service-editorial-number {
+    padding-top: 4px;
+    position: relative;
+    left: 7px;
+    transform: none;
+  }
+
+  .service-editorial-content {
+    padding-right: 14px;
   }
 }
