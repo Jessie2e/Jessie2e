@@ -2904,9 +2904,8 @@
     1px solid rgba(82, 44, 42, 0.16);
 
   transition:
-    padding-left 0.35s ease,
-    padding-right 0.35s ease,
-    background 0.35s ease;
+    background 0.45s ease,
+    box-shadow 0.45s ease;
 }
 
 .service-editorial-row:last-of-type {
@@ -2915,8 +2914,12 @@
 }
 
 .service-editorial-row:hover {
-  padding-left: 31px;
-  padding-right: 13px;
+  background: rgba(161, 194, 190, 0.055);
+  box-shadow: inset 4px 0 0 rgba(105, 125, 102, 0.28);
+}
+
+.service-editorial-row-featured:hover {
+  background: rgba(161, 194, 190, 0.13);
 }
 
 
@@ -8774,11 +8777,414 @@ article + article {
   .service-editorial-number {
     padding-top: 4px;
     position: relative;
-    left: 7px;
+    left: 12px;
     transform: none;
   }
 
   .service-editorial-content {
     padding-right: 14px;
+  }
+}
+/* =========================================================
+   MOBILE SCANABILITY — HERO + SERVICES
+   Keeps desktop/tablet presentation unchanged.
+========================================================= */
+
+.services-header-copy-mobile,
+.service-mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .services-editorial {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .services-editorial-header {
+    margin-bottom: 28px;
+  }
+
+  .services-header-copy-desktop {
+    display: none;
+  }
+
+  .services-header-copy-mobile {
+    display: block;
+    font-size: 0.98rem;
+    line-height: 1.62;
+  }
+
+  .service-editorial-row {
+    padding-top: 29px;
+    padding-bottom: 30px;
+  }
+
+  .service-editorial-content {
+    margin-top: 10px;
+  }
+
+  .service-editorial-lead {
+    margin-bottom: 10px;
+  }
+
+  .service-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+
+    width: 100%;
+    margin: 0;
+    padding: 11px 0 4px;
+
+    color: var(--ink-navy);
+    background: transparent;
+    border: 0;
+    border-top: 1px solid rgba(82, 44, 42, 0.11);
+
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .service-mobile-toggle-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 28px;
+
+    width: 28px;
+    height: 28px;
+
+    color: var(--ink-navy);
+    border: 1px solid rgba(82, 44, 42, 0.15);
+    border-radius: 50%;
+
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .service-mobile-extra {
+    max-height: 0;
+    margin-top: 0 !important;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition:
+      max-height 0.35s ease,
+      margin 0.35s ease,
+      opacity 0.2s ease,
+      transform 0.25s ease;
+  }
+
+  .service-editorial-row.service-mobile-open .service-mobile-extra {
+    max-height: 440px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .service-editorial-row.service-mobile-open
+    .service-editorial-content > p.service-mobile-extra {
+    margin-top: 15px !important;
+  }
+
+  .service-editorial-row.service-mobile-open
+    .service-editorial-tags.service-mobile-extra {
+    margin-top: 17px !important;
+  }
+
+  .service-brand-addon {
+    margin-top: 34px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-work-preview {
+    height: 462px;
+    margin-top: 14px;
+  }
+
+  .hero-work-caption {
+    top: 0;
+    left: 5%;
+  }
+
+  .hero-project-susan {
+    top: 58px;
+  }
+
+  .hero-project-main {
+    top: 140px;
+  }
+
+  .hero-project-soda {
+    top: 308px;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-work-preview {
+    height: 445px;
+  }
+
+  .hero-work-caption {
+    top: 0;
+  }
+
+  .hero-project-susan {
+    top: 54px;
+  }
+
+  .hero-project-main {
+    top: 132px;
+  }
+
+  .hero-project-soda {
+    top: 292px;
+  }
+}
+
+@media (max-width: 520px) {
+  .services-editorial-header h2 {
+    font-size: clamp(2.55rem, 10.5vw, 3.25rem);
+    line-height: 0.96;
+  }
+
+  .services-kicker {
+    margin-bottom: 12px;
+  }
+}
+
+/* =========================================================
+   MOTION SYSTEM — POLISHED, SUBTLE, ACCESSIBLE
+   ========================================================= */
+
+/* Thin page-progress accent. JS updates --scroll-progress while scrolling. */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  width: 100%;
+  height: 3px;
+
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--peach-clay), var(--teal-leaf));
+  transform: scaleX(var(--scroll-progress, 0));
+  transform-origin: left center;
+  will-change: transform;
+}
+
+/* ---------------------------------------------------------
+   HERO LOAD-IN — one purposeful stagger, then it stays put
+   --------------------------------------------------------- */
+@keyframes heroLiftIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroPreviewIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.studio-hero-eyebrow {
+  animation: heroLiftIn 0.52s cubic-bezier(0.2, 0.8, 0.2, 1) 0.04s both;
+}
+
+.studio-hero-title span {
+  animation: heroLiftIn 0.62s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.studio-hero-title span:nth-child(1) { animation-delay: 0.10s; }
+.studio-hero-title span:nth-child(2) { animation-delay: 0.20s; }
+.studio-hero-title span:nth-child(3) { animation-delay: 0.30s; }
+
+.studio-hero-description {
+  animation: heroLiftIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.40s both;
+}
+
+.studio-hero-actions {
+  animation: heroLiftIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.49s both;
+}
+
+.studio-hero-founder {
+  animation: heroLiftIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) 0.58s both;
+}
+
+.hero-work-preview {
+  animation: heroPreviewIn 0.78s cubic-bezier(0.16, 1, 0.3, 1) 0.52s both;
+}
+
+.studio-hero-scroll {
+  animation: heroLiftIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.76s both;
+}
+
+/* ---------------------------------------------------------
+   SCROLL REVEALS
+   --------------------------------------------------------- */
+.reveal-on-scroll {
+  --reveal-delay: 0ms;
+
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.68s ease var(--reveal-delay),
+    transform 0.72s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.reveal-from-left {
+  transform: translateX(-20px);
+}
+
+.reveal-on-scroll.reveal-from-right {
+  transform: translateX(20px);
+}
+
+.reveal-on-scroll.reveal-scale {
+  transform: translateY(16px) scale(0.975);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  will-change: auto;
+}
+
+/* Project visuals get a tiny editorial/camera lift after reveal. */
+.featured-project-visual,
+.secondary-project-art {
+  transition:
+    opacity 0.68s ease var(--reveal-delay, 0ms),
+    transform 0.72s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .featured-project:hover .featured-project-visual.reveal-on-scroll.is-visible {
+    transform: translateY(-4px) scale(1.008);
+  }
+
+  .secondary-project:hover .secondary-project-art.reveal-on-scroll.is-visible {
+    transform: scale(1.012);
+  }
+}
+
+/* ---------------------------------------------------------
+   MICRO-INTERACTIONS — tiny movement, big polish
+   --------------------------------------------------------- */
+.studio-hero-scroll span:last-child,
+.services-editorial-cta a span,
+.contact-direct-email span,
+.contact-submit span {
+  display: inline-block;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.studio-hero-scroll:hover span:last-child {
+  transform: translateY(4px);
+}
+
+.services-editorial-cta a:hover span,
+.contact-direct-email:hover span,
+.contact-submit:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* Give the new mobile accordion a more tactile open/close motion. */
+.service-mobile-toggle-icon {
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.service-editorial-row.service-mobile-open .service-mobile-toggle-icon {
+  transform: rotate(180deg) scale(1.06);
+  background: rgba(161, 194, 190, 0.16);
+  border-color: rgba(82, 44, 42, 0.24);
+}
+
+/* ---------------------------------------------------------
+   TOUCH DEVICES — normal cursor, no decorative bird cursor
+   --------------------------------------------------------- */
+@media (max-width: 1024px), (hover: none), (pointer: coarse) {
+  html,
+  body,
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    cursor: auto !important;
+  }
+
+  .custom-cursor-container {
+    display: none !important;
+  }
+}
+
+/* Respect visitors who have reduced-motion enabled. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+
+  .studio-hero-eyebrow,
+  .studio-hero-title span,
+  .studio-hero-description,
+  .studio-hero-actions,
+  .studio-hero-founder,
+  .hero-work-preview,
+  .studio-hero-scroll {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .reveal-on-scroll,
+  .reveal-on-scroll.reveal-from-left,
+  .reveal-on-scroll.reveal-from-right,
+  .reveal-on-scroll.reveal-scale,
+  .reveal-on-scroll.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .service-mobile-extra,
+  .service-mobile-toggle-icon,
+  .studio-hero-button,
+  .studio-hero-text-link span,
+  .work-link span,
+  .scroll-progress {
+    transition: none !important;
+  }
+}
+/* Move service numbers inward on mobile */
+@media (max-width: 720px) {
+  .service-editorial-number {
+    position: relative;
+    left: 12px;
   }
 }

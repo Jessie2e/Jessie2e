@@ -5,11 +5,30 @@ export default function CustomCursor() {
   const [rotation, setRotation] = useState(0);
   const [isFlapping, setIsFlapping] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const [isCursorEnabled, setIsCursorEnabled] = useState(false);
   
   const lastMousePos = useRef({ x: 0, y: 0 });
   const flapTimeout = useRef(null);
 
   useEffect(() => {
+    const cursorMedia = window.matchMedia(
+      '(min-width: 1025px) and (hover: hover) and (pointer: fine)'
+    );
+
+    const updateCursorAvailability = () => {
+      setIsCursorEnabled(cursorMedia.matches);
+    };
+
+    updateCursorAvailability();
+    cursorMedia.addEventListener('change', updateCursorAvailability);
+
+    return () => {
+      cursorMedia.removeEventListener('change', updateCursorAvailability);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isCursorEnabled) return undefined;
     const handleMouseMove = (e) => {
       const { clientX: x, clientY: y } = e;
       
@@ -55,7 +74,11 @@ export default function CustomCursor() {
       window.removeEventListener('mouseup', handleMouseUp);
       clearTimeout(flapTimeout.current);
     };
-  }, []);
+  }, [isCursorEnabled]);
+
+  if (!isCursorEnabled) {
+    return null;
+  }
 
   return (
     <div className="custom-cursor-container">

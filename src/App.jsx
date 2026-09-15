@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomCursor from './components/CustomCursor';
 
 export default function App() {
   const [isBirdFlying, setIsBirdFlying] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [expandedServices, setExpandedServices] = useState([]);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -12,6 +13,98 @@ export default function App() {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const updateScrollProgress = () => {
+      const scrollableHeight = root.scrollHeight - window.innerHeight;
+      const progress = scrollableHeight > 0
+        ? Math.min(1, Math.max(0, window.scrollY / scrollableHeight))
+        : 0;
+
+      root.style.setProperty('--scroll-progress', progress);
+    };
+
+    const revealGroups = [
+      ['.work-heading > *', ''],
+      ['.featured-project-visual', 'reveal-scale'],
+      ['.featured-project-copy', 'reveal-from-right'],
+      ['.secondary-project-art', 'reveal-scale'],
+      ['.secondary-project-copy', ''],
+      ['.services-editorial-header > *', ''],
+      ['.service-editorial-row', ''],
+      ['.service-brand-addon', 'reveal-scale'],
+      ['.services-editorial-cta', ''],
+      ['.why-2e-header > *', ''],
+      ['.why-2e-item', 'reveal-from-left'],
+      ['.why-2e-experience', 'reveal-scale'],
+      ['.about-kicker', ''],
+      ['.about-jessie-visual', 'reveal-from-left'],
+      ['.about-jessie-content', 'reveal-from-right'],
+      ['.about-capabilities', ''],
+      ['.contact-editorial-copy', 'reveal-from-left'],
+      ['.contact-form-card', 'reveal-from-right'],
+    ];
+
+    const revealTargets = [];
+
+    revealGroups.forEach(([selector, variant]) => {
+      document.querySelectorAll(selector).forEach((element, index) => {
+        element.classList.add('reveal-on-scroll');
+
+        if (variant) {
+          element.classList.add(variant);
+        }
+
+        element.style.setProperty('--reveal-delay', `${Math.min(index, 4) * 70}ms`);
+        revealTargets.push(element);
+      });
+    });
+
+    let observer;
+
+    if (prefersReducedMotion) {
+      revealTargets.forEach((element) => element.classList.add('is-visible'));
+    } else {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.13,
+          rootMargin: '0px 0px -8% 0px',
+        }
+      );
+
+      revealTargets.forEach((element) => observer.observe(element));
+    }
+
+    updateScrollProgress();
+    window.addEventListener('scroll', updateScrollProgress, { passive: true });
+    window.addEventListener('resize', updateScrollProgress);
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollProgress);
+      window.removeEventListener('resize', updateScrollProgress);
+      observer?.disconnect();
+      root.style.removeProperty('--scroll-progress');
+    };
+  }, []);
+
+  const toggleService = (serviceNumber) => {
+    setExpandedServices((current) =>
+      current.includes(serviceNumber)
+        ? current.filter((number) => number !== serviceNumber)
+        : [...current, serviceNumber]
+    );
+  };
 
   const triggerBirdEasterEgg = () => {
     if (!isBirdFlying) {
@@ -105,6 +198,7 @@ const handleSubmit = async (event) => {
 
   return (
     <>
+      <div className="scroll-progress" aria-hidden="true" />
       <CustomCursor />
 
       <img
@@ -622,8 +716,11 @@ const handleSubmit = async (event) => {
       </div>
 
       <div className="services-header-copy">
-        <p>
+        <p className="services-header-copy-desktop">
           Not every business needs the same website. I design around what’s actually useful—whether you’re starting from scratch, improving what you already have, or adding the pieces that make the whole experience work better. Based near Smith Lake in Arley, Alabama, 2e Studio creates affordable custom websites for small businesses, artists, and independent brands across North Alabama, including Cullman, Jasper, and Birmingham.
+        </p>
+        <p className="services-header-copy-mobile">
+          Custom builds, thoughtful refreshes, and useful add-ons—designed around what your business actually needs. Based near Smith Lake and serving small businesses and creatives across North Alabama.
         </p>
       </div>
 
@@ -631,7 +728,7 @@ const handleSubmit = async (event) => {
 
 
     {/* SERVICE 01 */}
-    <article className="service-editorial-row">
+    <article className={`service-editorial-row ${expandedServices.includes(1) ? 'service-mobile-open' : ''}`}> 
 
       <div className="service-editorial-number">
         01
@@ -658,7 +755,19 @@ const handleSubmit = async (event) => {
           squeezed into a template.
         </p>
 
-        <p>
+        <button
+          type="button"
+          className="service-mobile-toggle"
+          aria-expanded={expandedServices.includes(1)}
+          onClick={() => toggleService(1)}
+        >
+          <span>{expandedServices.includes(1) ? 'Show less' : 'See what’s included'}</span>
+          <span className="service-mobile-toggle-icon" aria-hidden="true">
+            {expandedServices.includes(1) ? '−' : '+'}
+          </span>
+        </button>
+
+        <p className="service-mobile-extra">
           For small businesses, artists, and independent
           brands that need a thoughtful online home from
           the ground up. I handle the structure, visual
@@ -666,7 +775,7 @@ const handleSubmit = async (event) => {
           so everything feels like it belongs together.
         </p>
 
-        <div className="service-editorial-tags">
+        <div className="service-editorial-tags service-mobile-extra">
           <span>Strategy</span>
           <span>Web Design</span>
           <span>Development</span>
@@ -680,7 +789,7 @@ const handleSubmit = async (event) => {
 
 
     {/* SERVICE 02 */}
-    <article className="service-editorial-row service-editorial-row-featured">
+    <article className={`service-editorial-row service-editorial-row-featured ${expandedServices.includes(2) ? 'service-mobile-open' : ''}`}> 
 
       <div className="service-editorial-number">
         02
@@ -707,7 +816,19 @@ const handleSubmit = async (event) => {
           Let’s fix what isn’t working.
         </p>
 
-        <p>
+        <button
+          type="button"
+          className="service-mobile-toggle"
+          aria-expanded={expandedServices.includes(2)}
+          onClick={() => toggleService(2)}
+        >
+          <span>{expandedServices.includes(2) ? 'Show less' : 'See what’s included'}</span>
+          <span className="service-mobile-toggle-icon" aria-hidden="true">
+            {expandedServices.includes(2) ? '−' : '+'}
+          </span>
+        </button>
+
+        <p className="service-mobile-extra">
           Maybe it feels dated. Maybe it’s confusing on
           mobile. Maybe the business has changed and the
           website hasn’t. We can keep what works, rethink
@@ -715,7 +836,7 @@ const handleSubmit = async (event) => {
           clearer point of view.
         </p>
 
-        <div className="service-editorial-tags">
+        <div className="service-editorial-tags service-mobile-extra">
           <span>Redesign</span>
           <span>UX Improvements</span>
           <span>Responsive Design</span>
@@ -728,7 +849,7 @@ const handleSubmit = async (event) => {
 
 
     {/* SERVICE 03 */}
-    <article className="service-editorial-row">
+    <article className={`service-editorial-row ${expandedServices.includes(3) ? 'service-mobile-open' : ''}`}> 
 
       <div className="service-editorial-number">
         03
@@ -755,7 +876,19 @@ const handleSubmit = async (event) => {
           more than just look good.
         </p>
 
-        <p>
+        <button
+          type="button"
+          className="service-mobile-toggle"
+          aria-expanded={expandedServices.includes(3)}
+          onClick={() => toggleService(3)}
+        >
+          <span>{expandedServices.includes(3) ? 'Show less' : 'See what’s included'}</span>
+          <span className="service-mobile-toggle-icon" aria-hidden="true">
+            {expandedServices.includes(3) ? '−' : '+'}
+          </span>
+        </button>
+
+        <p className="service-mobile-extra">
           Booking flows, online ordering, forms,
           customer tools, simple ecommerce, automations,
           and other practical additions that make things
@@ -763,7 +896,7 @@ const handleSubmit = async (event) => {
           you, too.
         </p>
 
-        <div className="service-editorial-tags">
+        <div className="service-editorial-tags service-mobile-extra">
           <span>Booking</span>
           <span>Ordering</span>
           <span>Forms</span>
