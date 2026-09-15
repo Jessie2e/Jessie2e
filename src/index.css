@@ -9188,3 +9188,323 @@ article + article {
     left: 12px;
   }
 }
+
+/* PROJECT MOCKUPS — MORE VISUAL SEPARATION */
+
+.project-browser,
+.secondary-project-art {
+  background: #fffdf8;
+  border: 1px solid rgba(82, 44, 42, 0.14);
+  box-shadow:
+    0 18px 45px rgba(58, 42, 38, 0.12),
+    0 4px 12px rgba(58, 42, 38, 0.08);
+}
+
+/* gives each project a little "object on the page" feeling */
+.featured-project,
+.secondary-project {
+  position: relative;
+}
+
+/* desktop only */
+@media (hover: hover) and (pointer: fine) {
+  .project-browser,
+  .secondary-project-art {
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease;
+  }
+
+  .featured-project:hover .project-browser,
+  .secondary-project:hover .secondary-project-art {
+    transform: translateY(-4px);
+    box-shadow:
+      0 24px 55px rgba(58, 42, 38, 0.16),
+      0 6px 16px rgba(58, 42, 38, 0.10);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 720px) {
+  .featured-project,
+  .secondary-project {
+    background: rgba(255, 253, 248, 0.72);
+    border: 1px solid rgba(82, 44, 42, 0.09);
+    border-radius: 22px;
+    padding: 10px;
+    box-shadow: 0 12px 30px rgba(58, 42, 38, 0.08);
+  }
+
+  .project-browser,
+  .secondary-project-art {
+    border-radius: 16px;
+    box-shadow:
+      0 16px 35px rgba(58, 42, 38, 0.16),
+      0 3px 10px rgba(58, 42, 38, 0.09);
+  }
+}
+.project-browser {
+  outline: 1px solid rgba(34, 43, 46, 0.10);
+}
+@media (max-width: 720px) {
+  .featured-project,
+  .secondary-project {
+    flex-basis: 88vw;
+    width: 88vw;
+  }
+}
+/* =========================================================
+   HERO PROJECT STACK ONLY — STRONGER WINDOW SEPARATION
+   (Susan / In The Woods / Soda Shop in the homepage hero)
+========================================================= */
+
+.hero-work-preview .hero-project-window {
+  border: 1px solid rgba(103, 43, 76, 0.24);
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.88),
+    0 12px 28px rgba(65, 43, 52, 0.15),
+    0 32px 68px rgba(65, 43, 52, 0.18);
+}
+
+.hero-work-preview .hero-window-bar {
+  background: #fbf8f3;
+  border-bottom: 1px solid rgba(82, 44, 42, 0.12);
+}
+
+/* A little extra contrast on phones, where the cards overlap more tightly. */
+@media (max-width: 800px) {
+  .hero-work-preview .hero-project-window {
+    border-color: rgba(103, 43, 76, 0.30);
+    box-shadow:
+      0 0 0 2px rgba(255, 255, 255, 0.94),
+      0 10px 22px rgba(65, 43, 52, 0.18),
+      0 26px 52px rgba(65, 43, 52, 0.22);
+  }
+}
+/* =========================================================
+   MOBILE HERO STACK — FINAL SPACING
+========================================================= */
+
+@media (max-width: 520px) {
+
+  /* Softer shadows on the 3 hero browser windows */
+  .hero-work-preview .hero-project-window {
+    border-color: rgba(103, 43, 76, 0.24);
+
+    box-shadow:
+      0 0 0 2px rgba(255, 255, 255, 0.92),
+      0 8px 18px rgba(65, 43, 52, 0.10),
+      0 18px 36px rgba(65, 43, 52, 0.11);
+  }
+
+  /* Move Susan slightly LEFT */
+  .hero-project-susan {
+    right: 1%;
+  }
+
+  /* Give the whole browser stack more room,
+     which pushes SELECTED WORK underneath Soda Shop */
+  .hero-work-preview {
+    height: 525px;
+  }
+
+  .studio-hero-scroll {
+    margin-top: 4px;
+  }
+}
+
+/* =========================================================
+   SELECTED WORK — UNIFIED IMAGE STAGE
+   Soda + Susan + Eryn only
+========================================================= */
+
+.soda-project-visual,
+.susan-project-visual,
+.eryn-project-visual {
+  height: 320px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 28px;
+
+  background: #f4f1ea;
+}
+
+/* Make the actual website screenshots feel consistent */
+.soda-project-visual img,
+.susan-project-visual img,
+.eryn-project-visual img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 250px;
+
+  object-fit: contain;
+  object-position: center;
+
+  border-radius: 10px;
+}
+
+/* =========================================================
+   FINAL HERO + SELECTED WORK ALIGNMENT
+========================================================= */
+
+
+/* DESKTOP ONLY — lower the 3 pills below the Soda Shop hero */
+@media (min-width: 801px) {
+  .hero-work-mini-label {
+    bottom: -8px;
+  }
+}
+
+
+/* =========================================================
+   SELECTED WORK — CONSISTENT IMAGE LAYOUT
+========================================================= */
+
+.soda-project-visual,
+.susan-project-visual,
+.eryn-project-visual {
+  position: relative;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+
+  height: 320px;
+
+  padding: 18px 24px 24px;
+  gap: 12px;
+
+  align-items: center;
+  justify-items: center;
+
+  background: #f4f1ea;
+}
+
+
+/* Put the status bubble back in its own row */
+.soda-project-visual .project-status-badge,
+.susan-project-visual .project-status-badge,
+.eryn-project-visual .project-status-badge {
+  position: static;
+
+  justify-self: start;
+
+  margin: 0;
+}
+
+
+/* Center all 3 screenshots on the same axis */
+.soda-project-visual img,
+.susan-project-visual img,
+.eryn-project-visual img {
+  display: block;
+
+  width: 88%;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 235px;
+
+  object-fit: contain;
+  object-position: center;
+
+  justify-self: center;
+  align-self: center;
+
+  border-radius: 10px;
+}
+/* =========================================================
+   MOBILE SELECTED WORK — MATCH ALL 4 IMAGE STAGES
+========================================================= */
+
+@media (max-width: 720px) {
+
+  .secondary-work-grid .mobile-inwoods-visual,
+  .secondary-work-grid .soda-project-visual,
+  .secondary-work-grid .susan-project-visual,
+  .secondary-work-grid .eryn-project-visual {
+    height: 225px;
+    min-height: 225px;
+
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+
+    gap: 9px;
+    padding: 12px;
+
+    background: #f4f1ea;
+  }
+
+  .secondary-work-grid .mobile-inwoods-visual img,
+  .secondary-work-grid .soda-project-visual img,
+  .secondary-work-grid .susan-project-visual img,
+  .secondary-work-grid .eryn-project-visual img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    max-height: none;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 9px;
+  }
+}
+/* =========================================================
+   ABOUT — STICKY "BEHIND 2E STUDIO"
+========================================================= */
+
+@media (min-width: 801px) {
+
+  .about-editorial-inner {
+    position: relative;
+  }
+
+  .about-kicker {
+    position: sticky;
+    top: 105px;
+
+    width: fit-content;
+
+    z-index: 1;
+  }
+
+  /* Portrait passes IN FRONT of the sticky label */
+  .about-jessie-visual {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Soft white fade before the portrait reaches the label */
+  .about-jessie-visual::before {
+  content: "";
+
+  position: absolute;
+
+  left: -40px;
+  right: -40px;
+
+  /* controls WHEN the text disappears */
+  top: -20px;
+
+  /* keep covering it after that point */
+  bottom: 0;
+
+  background: #fff;
+
+  z-index: 3;
+  pointer-events: none;
+}
+
+  .about-jessie-image {
+    position: relative;
+    z-index: 4;
+  }
+}

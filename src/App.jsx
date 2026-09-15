@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CustomCursor from './components/CustomCursor';
 
 export default function App() {
@@ -361,11 +361,11 @@ const handleSubmit = async (event) => {
 </a>
 
 
-  {/* SODA SHOP — BACK CARD */}
+  {/* THE SODA STOP — CONCEPT CARD */}
   <a
-  href="/work/soda-shop-41"
+  href="/work/soda-stop-concept"
   className="hero-project-window hero-project-soda"
-  aria-label="View Soda Shop 41 project"
+  aria-label="View The Soda Stop concept design"
 >
 
   <div className="hero-window-bar">
@@ -381,7 +381,7 @@ const handleSubmit = async (event) => {
   <div className="hero-soda-real-preview">
 
     <img
-      src="/soda-shop-41/hero.png"
+      src="/sodastop/sodastop-cover.png"
       alt=""
       aria-hidden="true"
     />
@@ -456,14 +456,60 @@ const handleSubmit = async (event) => {
       </h2>
 
       <p className="work-intro">
-        Every project starts with the personality of the business,
-        the people it serves, and what the website actually needs to do.
+        Client work and concept projects both start with personality,
+        the people they need to reach, and what the website actually needs to do.
       </p>
     </div>
 
+    {/* Mobile portfolio layout: keep the desktop feature, but on phones
+        place every project in one swipeable carousel. */}
+    <style>{`
+      .mobile-carousel-inwoods {
+        display: none;
+      }
+
+      .mobile-inwoods-visual {
+        position: relative;
+        height: 330px;
+        padding: 18px;
+        overflow: hidden;
+        background: #f4f1ea;
+      }
+
+      .mobile-inwoods-visual img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        border-radius: 12px;
+      }
+
+      @media (max-width: 720px) {
+        .desktop-featured-project {
+          display: none;
+        }
+
+        .mobile-carousel-inwoods {
+          display: block;
+        }
+
+        .mobile-inwoods-visual {
+          height: auto;
+          min-height: 0;
+          padding: 12px;
+        }
+
+        .mobile-inwoods-visual img {
+          height: auto;
+          max-height: 185px;
+        }
+      }
+    `}</style>
+
 
     {/* FEATURED PROJECT */}
-    <article className="featured-project">
+    <article className="featured-project desktop-featured-project">
 
       <div className="featured-project-visual">
         <div className="project-browser">
@@ -535,19 +581,67 @@ const handleSubmit = async (event) => {
     {/* SECONDARY PROJECTS */}
     <div className="secondary-work-grid">
 
+      {/* IN THE WOODS — MOBILE FIRST CARD */}
+      <article className="secondary-project mobile-carousel-inwoods">
 
-      {/* SODA SHOP 41 */}
+        <div className="secondary-project-art mobile-inwoods-visual">
+          <div className="project-status-badge">
+            Live Site
+          </div>
+
+          <img
+            src="/inthewoods/cover.png"
+            alt="In The Woods Dog Training website"
+          />
+        </div>
+
+        <div className="secondary-project-copy">
+          <div className="project-meta-row">
+            <span className="project-number">01</span>
+
+            <span className="project-type">
+              Website Design + Development
+            </span>
+          </div>
+
+          <h3>In The Woods Dog Training</h3>
+
+          <p>
+            A warm, approachable website for an Alabama dog-training
+            business—designed to explain services clearly, earn trust
+            quickly, and make getting started feel simple.
+          </p>
+
+          <div className="work-tags">
+            <span>Web Design</span>
+            <span>Development</span>
+            <span>Responsive Design</span>
+          </div>
+
+          <a
+            href="/work/in-the-woods"
+            className="work-link"
+          >
+            View Case Study
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+      </article>
+
+
+      {/* THE SODA STOP — CONCEPT PROJECT */}
       <article className="secondary-project">
 
         <div className="secondary-project-art soda-project-visual">
 
   <div className="project-status-badge">
-    In Development
+    Concept Project
   </div>
 
   <img
-    src="/soda-shop-41/hero.png"
-    alt="Soda Shop 41 website homepage"
+    src="/sodastop/sodastop-cover.png"
+    alt="The Soda Stop concept website homepage"
   />
 
 </div>
@@ -558,16 +652,16 @@ const handleSubmit = async (event) => {
             <span className="project-number">02</span>
 
             <span className="project-type">
-              Website + Visual Identity
+              Concept Soda Shop Design
             </span>
           </div>
 
-          <h3>Soda Shop 41</h3>
+          <h3>The Soda Stop</h3>
 
           <p>
-            A playful roadside-inspired digital identity and website
-            designed to capture the personality of a local Smith Lake
-            favorite.
+            A fictional Smith Lake-area soda-shop concept showing how a custom
+            website can turn a small business' personality, menu, and
+            customer experience into a memorable digital brand.
           </p>
 
           <div className="work-tags">
@@ -577,10 +671,10 @@ const handleSubmit = async (event) => {
           </div>
 
           <a
-  href="/work/soda-shop-41"
+  href="/work/soda-stop-concept"
   className="work-link"
 >
-  View Case Study
+  View Concept
   <span aria-hidden="true">↗</span>
 </a>
 
@@ -599,7 +693,7 @@ const handleSubmit = async (event) => {
   </div>
 
   <img
-    src="/susan-ripp/community.png"
+    src="/susan-ripp/hero.png"
     alt="Susan Ripp Art website featuring original paintings, prints, and watercolor workshops"
   />
 
