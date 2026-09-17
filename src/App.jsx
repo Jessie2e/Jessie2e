@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import CustomCursor from './components/CustomCursor';
-
 const QUICK_INQUIRY_INITIAL_STATE = {
   name: '',
   businessName: '',
@@ -162,13 +161,13 @@ const MAINTENANCE_OPTIONS = [
   {
     value: 'fresh',
     label: 'Keep It Fresh',
-    price: '$35–$45/month',
+    price: '$39/month',
     description: 'Occasional text changes, photo swaps and small updates.',
   },
   {
     value: 'ongoing',
     label: 'Ongoing Support',
-    price: '$75–$95/month',
+    price: '$79/month',
     description: 'Regular updates when you’d rather have me handle them.',
   },
   {
@@ -294,6 +293,38 @@ export default function App() {
   const selectedMaintenance = MAINTENANCE_OPTIONS.find(
     (option) => option.value === formState.maintenance
   );
+  const [hideMobileCta, setHideMobileCta] = useState(false);
+
+useEffect(() => {
+  const form = document.getElementById("project-form");
+  const footer = document.querySelector("footer");
+
+  if (!form || !footer) return;
+
+  const visibleSections = new Set();
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          visibleSections.add(entry.target);
+        } else {
+          visibleSections.delete(entry.target);
+        }
+      });
+
+      setHideMobileCta(visibleSections.size > 0);
+    },
+    {
+      threshold: 0.08,
+    }
+  );
+
+  observer.observe(form);
+  observer.observe(footer);
+
+  return () => observer.disconnect();
+}, []);
   const builderTotalSteps = 7;
 
   useEffect(() => {
@@ -1512,7 +1543,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
     <div className="why-2e-experience">
 
       <div className="why-2e-big-number">
-        7+
+        10+
       </div>
 
       <p>
@@ -1641,7 +1672,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
     <div className="contact-editorial-copy">
 
       <p className="contact-kicker">
-        Start a Project
+        Pricing + Website Care
       </p>
 
       <h2>
@@ -1651,36 +1682,83 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       </h2>
 
       <p className="contact-editorial-intro">
-        Already know what you need? Send me a quick note and I’ll take it from there.
-        Still figuring it out? Build your site and get a realistic starting price range.
+        Straightforward pricing, no mystery proposal, and no required monthly website fee.
+        Pick the kind of site that sounds closest to what you need — or use the form to get a rough range.
       </p>
 
       <div className="builder-price-guide" aria-label="Typical website pricing">
         <div className="builder-price-guide-card">
-          <span>Simple Site</span>
+          <div>
+            <span>Simple Site</span>
+            <small>Essentials for a small business that needs a polished home online.</small>
+          </div>
           <strong>$250–$350</strong>
         </div>
 
         <div className="builder-price-guide-card">
-          <span>Business Site</span>
+          <div>
+            <span>Business Site</span>
+            <small>More room for services, photos, forms, FAQs, and your story.</small>
+          </div>
           <strong>$350–$550</strong>
         </div>
 
         <div className="builder-price-guide-card">
-          <span>Expanded Site</span>
+          <div>
+            <span>Expanded Site</span>
+            <small>More pages, booking integrations, custom forms, or extra functionality.</small>
+          </div>
           <strong>$550–$800</strong>
         </div>
 
         <div className="builder-price-guide-card">
-          <span>Custom Build</span>
+          <div>
+            <span>Custom Build</span>
+            <small>Shops, courses, memberships, custom tools, and bigger ideas.</small>
+          </div>
           <strong>$800+</strong>
         </div>
       </div>
 
-      <p className="builder-price-note">
-        Optional ongoing support starts around $35/month. Final pricing is
-        always confirmed with you before work begins.
-      </p>
+      <div className="website-care-block" aria-label="Optional website care plans">
+        <div className="website-care-heading">
+          <p className="website-care-eyebrow">After launch</p>
+          <h3>Website care, if you want it.</h3>
+          <p>
+            Your site is yours. Keep it yourself, or have me handle the little things when you need a hand.
+          </p>
+        </div>
+
+        <div className="website-care-grid">
+          <div className="website-care-card">
+            <div className="website-care-card-top">
+              <strong>DIY</strong>
+              <b>$0<span>/mo</span></b>
+            </div>
+            <p>You own the site and take it from here. Reach out anytime for separately quoted changes.</p>
+          </div>
+
+          <div className="website-care-card">
+            <div className="website-care-card-top">
+              <strong>Keep It Fresh</strong>
+              <b>$39<span>/mo</span></b>
+            </div>
+            <p>Up to 30 minutes of small text, photo, hours, pricing, or link updates each month.</p>
+          </div>
+
+          <div className="website-care-card">
+            <div className="website-care-card-top">
+              <strong>Ongoing Support</strong>
+              <b>$79<span>/mo</span></b>
+            </div>
+            <p>Up to one hour of updates and support each month, plus room for small improvements.</p>
+          </div>
+        </div>
+
+        <p className="website-care-note">
+          No required care plan. Your domain and paid services stay in your name, and larger additions are quoted separately.
+        </p>
+      </div>
 
       <a
         href="mailto:jessietowey@gmail.com"
@@ -1690,8 +1768,8 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         <span aria-hidden="true">↗</span>
       </a>
 
-      <p className="contact-small-note">
-        Based near Smith Lake in Alabama · Working with businesses anywhere.
+      <p className="contact-location contact-location-desktop">
+      Based near Smith Lake in Alabama · Working with businesses anywhere.
       </p>
 
     </div>
@@ -1750,6 +1828,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
               </p>
 
               <form
+                id="project-form"
                 className="contact-form contact-form-editorial quick-inquiry-form"
                 onSubmit={handleQuickSubmit}
                 noValidate
@@ -1901,7 +1980,6 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
                   <span aria-hidden="true">↗</span>
                 </button>
               </form>
-
               <button
                 type="button"
                 className="quick-builder-link"
@@ -2404,7 +2482,9 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       )}
 
     </div>
-
+        <p className="contact-location contact-location-mobile">
+                  Based near Smith Lake in Alabama · Working with businesses anywhere.
+                  </p>
   </div>
 
 </section>
@@ -2449,6 +2529,14 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
           rights reserved.
         </p>
       </footer>
+
+      <a
+  href="#project-form"
+  className={`mobile-project-cta ${hideMobileCta ? "mobile-project-cta-hidden" : ""}`}
+>
+  Start a Project
+  <span aria-hidden="true">↗</span>
+</a>
     </>
   );
 }
