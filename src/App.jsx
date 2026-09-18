@@ -186,11 +186,11 @@ const TIMELINE_OPTIONS = [
 ];
 
 const BUDGET_OPTIONS = [
-  'Under $250',
-  '$250–$400',
-  '$400–$650',
-  '$650–$1,000',
-  '$1,000+',
+  'Under $300',
+  '$300–$500',
+  '$500–$750',
+  '$750–$1,100',
+  '$1,100+',
   'I genuinely don’t know yet',
 ];
 
@@ -243,7 +243,7 @@ const getProjectEstimate = (state) => {
     return {
       key: 'custom',
       label: 'Custom Build',
-      range: '$800+',
+      range: '$1,100+',
       description:
         'Stores, courses, memberships, gated content and custom functionality usually need a little more planning before I can give you a useful number.',
     };
@@ -253,7 +253,7 @@ const getProjectEstimate = (state) => {
     return {
       key: 'expanded',
       label: 'Expanded Site',
-      range: '$550–$800',
+      range: '$750–$1,100',
       description:
         'A larger build with more content, integrations, custom interactions or functionality.',
     };
@@ -263,7 +263,7 @@ const getProjectEstimate = (state) => {
     return {
       key: 'business',
       label: 'Business Site',
-      range: '$350–$550',
+      range: '$500–$750',
       description:
         'A strong fit for multi-page sites, booking, richer galleries, menus, forms and more customized content.',
     };
@@ -272,7 +272,7 @@ const getProjectEstimate = (state) => {
   return {
     key: 'simple',
     label: 'Simple Site',
-    range: '$250–$350',
+    range: '$300–$450',
     description:
       'A clean, polished online home with the essentials your customers need.',
   };
@@ -1692,7 +1692,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
             <span>Simple Site</span>
             <small>Essentials for a small business that needs a polished home online.</small>
           </div>
-          <strong>$250–$350</strong>
+          <strong>$300–$450</strong>
         </div>
 
         <div className="builder-price-guide-card">
@@ -1700,7 +1700,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
             <span>Business Site</span>
             <small>More room for services, photos, forms, FAQs, and your story.</small>
           </div>
-          <strong>$350–$550</strong>
+          <strong>$500–$750</strong>
         </div>
 
         <div className="builder-price-guide-card">
@@ -1708,7 +1708,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
             <span>Expanded Site</span>
             <small>More pages, booking integrations, custom forms, or extra functionality.</small>
           </div>
-          <strong>$550–$800</strong>
+          <strong>$750–$1,100</strong>
         </div>
 
         <div className="builder-price-guide-card">
@@ -1716,7 +1716,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
             <span>Custom Build</span>
             <small>Shops, courses, memberships, custom tools, and bigger ideas.</small>
           </div>
-          <strong>$800+</strong>
+          <strong>$1,100+</strong>
         </div>
       </div>
 
@@ -1804,7 +1804,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         <div className="builder-success">
           <span className="builder-success-mark" aria-hidden="true">✓</span>
           <p className="builder-eyebrow">Message sent</p>
-          <h3>{contactMode === 'quick' ? 'Got it — I’ll take it from here.' : 'That’s everything I need to start.'}</h3>
+          <h3>{contactMode === 'quick' ? 'Got it — I’ll take it from here.' : 'That gives me what I need to recommend next steps.'}</h3>
           <p>
             {contactMode === 'quick'
               ? `I’ll read through your note and follow up ${getFollowUpPhrase(quickFormState.preferredContact)} so we can figure out the best next step.`
