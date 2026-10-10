@@ -286,11 +286,6 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
   <ul className={`nav-links ${isNavOpen ? "nav-links-open" : ""}`}>
     <li>
-      <a href="#home" onClick={() => setIsNavOpen(false)}>
-        Home
-      </a>
-    </li>
-    <li>
       <details className="nav-work-menu" onKeyDown={e => {if(e.key === 'Escape') e.currentTarget.open=false;}} onBlur={e => {if(!e.currentTarget.contains(e.relatedTarget)) e.currentTarget.open=false;}}>
         <summary>Work <span aria-hidden="true">⌄</span></summary>
         <div className="nav-work-projects">
@@ -298,11 +293,6 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
           {[['sarah-pickett','Sarah Pickett'],['in-the-woods','In The Woods'],['soda-stop-concept','The Soda Stop'],['susan-ripp','Susan Ripp Art'],['eryn-davis','Eryn Davis']].map(([slug,name]) => <a key={slug} href={`/work/${slug}`} onClick={() => setIsNavOpen(false)}>{name}</a>)}
         </div>
       </details>
-    </li>
-    <li>
-      <a href="#services" onClick={() => setIsNavOpen(false)}>
-        Services
-      </a>
     </li>
     <li><a href="/resources" onClick={() => setIsNavOpen(false)}>Resources</a></li>
     <li>

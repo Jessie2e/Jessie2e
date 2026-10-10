@@ -588,3 +588,7 @@ footer.studio-footer {
 @media(max-width:720px){.nav-work-menu summary{justify-content:center;}.nav-work-projects{position:static;width:100%;box-shadow:none;margin-bottom:8px;padding:4px 12px;}.nav-work-projects a{justify-content:center;}.nav-links-open{max-height:calc(100dvh - 70px);overflow-y:auto;}}
 
 @media(max-width:720px){.nav-links .nav-work-menu{width:100%;}.nav-links .nav-work-menu summary{width:100%;justify-content:center;}}
+
+.nav-work-menu summary { font-weight: 400; }
+
+@media (max-width: 720px) { .nav-work-menu summary { font-weight: 700; } }
