@@ -1,4 +1,4 @@
-import React from 'react';
+import StudioFooter from './StudioFooter';
 
 export default function InTheWoods() {
   return (
@@ -358,17 +358,7 @@ export default function InTheWoods() {
 
 
       {/* FOOTER */}
-      <footer className="case-study-footer">
-
-        <p>
-          © {new Date().getFullYear()} 2e Studio
-        </p>
-
-        <a href="/#portfolio">
-          More Work ↑
-        </a>
-
-      </footer>
+      <StudioFooter />
 
     </div>
   );

@@ -1,3 +1,4 @@
+import StudioFooter from './StudioFooter';
 export default function SodaStopConcept() {
   return (
     <div className="soda-case">
@@ -348,10 +349,7 @@ export default function SodaStopConcept() {
 
 
       {/* FOOTER */}
-      <footer className="soda-case-footer">
-        <p>© {new Date().getFullYear()} 2e Studio</p>
-        <a href="/#portfolio">More Work ↑</a>
-      </footer>
+      <StudioFooter />
 
     </div>
   );

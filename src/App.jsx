@@ -1,3 +1,4 @@
+import StudioFooter from './components/StudioFooter';
 import { useEffect, useState } from 'react';
 import CustomCursor from './components/CustomCursor';
 import { PROJECT_TIERS, CARE_PLANS } from './packages';
@@ -56,8 +57,6 @@ useEffect(() => {
       ['.work-heading > *', ''],
       ['.featured-project-visual', 'reveal-scale'],
       ['.featured-project-copy', 'reveal-from-right'],
-      ['.secondary-project-art', 'reveal-scale'],
-      ['.secondary-project-copy', ''],
       ['.why-2e-header > *', ''],
       ['.why-2e-item', 'reveal-from-left'],
       ['.about-kicker', ''],
@@ -292,15 +291,20 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       </a>
     </li>
     <li>
-      <a href="#portfolio" onClick={() => setIsNavOpen(false)}>
-        Work
-      </a>
+      <details className="nav-work-menu" onKeyDown={e => {if(e.key === 'Escape') e.currentTarget.open=false;}} onBlur={e => {if(!e.currentTarget.contains(e.relatedTarget)) e.currentTarget.open=false;}}>
+        <summary>Work <span aria-hidden="true">⌄</span></summary>
+        <div className="nav-work-projects">
+          <a href="#portfolio" onClick={e => {setIsNavOpen(false);e.currentTarget.closest('details').open=false;}}>All selected work ↗</a>
+          {[['sarah-pickett','Sarah Pickett'],['in-the-woods','In The Woods'],['soda-stop-concept','The Soda Stop'],['susan-ripp','Susan Ripp Art'],['eryn-davis','Eryn Davis']].map(([slug,name]) => <a key={slug} href={`/work/${slug}`} onClick={() => setIsNavOpen(false)}>{name}</a>)}
+        </div>
+      </details>
     </li>
     <li>
       <a href="#services" onClick={() => setIsNavOpen(false)}>
         Services
       </a>
     </li>
+    <li><a href="/resources" onClick={() => setIsNavOpen(false)}>Resources</a></li>
     <li>
       <a href="#about" onClick={() => setIsNavOpen(false)}>
         About
@@ -343,7 +347,16 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         that helps turn visitors into customers.
       </p>
 
-      <div className="studio-hero-actions">
+      <div className="studio-hero-founder">
+        <span className="studio-hero-founder-line"></span>
+
+        <p>
+          <strong>2e Studio</strong> by Jessie Towey
+          <span> — pronounced “two-ee.”</span>
+        </p>
+      </div>
+
+      <div className={`studio-hero-actions ${!hideMobileCta ? "studio-hero-actions-floating" : ""}`}>
 
         <a
           href="#portfolio"
@@ -363,14 +376,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
       </div>
 
-      <div className="studio-hero-founder">
-        <span className="studio-hero-founder-line"></span>
 
-        <p>
-          <strong>2e Studio</strong> by Jessie Towey
-          <span> — pronounced “two-ee.”</span>
-        </p>
-      </div>
 
     </div>
 
@@ -447,9 +453,9 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
   {/* IN THE WOODS — MAIN CARD */}
   <a
-    href="/work/in-the-woods"
+    href="/work/sarah-pickett"
     className="hero-project-window hero-project-main"
-    aria-label="View In The Woods Dog Training case study"
+    aria-label="View Sarah Pickett Voice & Speech Services case study"
   >
 
     <div className="hero-window-bar">
@@ -461,15 +467,15 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       </div>
 
       <p>
-        inthewoodsdogtraining.com
+        sarahpickettvoice.com
       </p>
 
     </div>
 
     <div className="hero-main-screen">
       <img
-        src="/inthewoods/cover.png"
-        alt="In The Woods Dog Training website"
+        src="/sarahpickettvoice/web/sarahpicketthero.webp"
+        alt="Sarah Pickett Voice & Speech Services website"
       />
     </div>
 
@@ -503,7 +509,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
     <div className="work-feature-row">
 
     <div className="work-heading">
-      <p className="work-kicker">Selected Work · 01—04</p>
+      <p className="work-kicker">Selected Work · 01—05</p>
 
       <h2>
         Built around the business.
@@ -630,35 +636,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
     {/* FEATURED PROJECT */}
     <article className="featured-project desktop-featured-project">
-
-      <div className="featured-project-visual">
-        <div className="project-browser">
-
-          <div className="project-browser-bar">
-            <span></span>
-            <span></span>
-            <span></span>
-
-            <div className="project-browser-url">
-              inthewoodsdogtraining.com
-            </div>
-          </div>
-
-          <div className="project-browser-screen">
-            <img
-              src="/inthewoods/cover.png"
-              alt="In The Woods Dog Training website"
-            />
-          </div>
-
-        </div>
-        <div className="featured-project-status">
-  Live Site
-</div>
-      </div>
-
-
-      <div className="featured-project-copy">
+      <header className="featured-project-heading">
 
         <div className="project-meta-row">
           <span className="project-number">01</span>
@@ -668,15 +646,44 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         </div>
 
         <h3>
-          In The Woods
-          <br />
-          Dog Training
+          Sarah Pickett · Voice & Speech Services
         </h3>
 
+      </header>
+
+
+      <a className="featured-project-visual featured-project-preview-link" href="/work/sarah-pickett" aria-label="View Sarah Pickett Voice & Speech Services case study">
+        <div className="project-browser">
+
+          <div className="project-browser-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <div className="project-browser-url">
+              sarahpickettvoice.com
+            </div>
+          </div>
+
+          <div className="project-browser-screen">
+            <img
+              src="/sarahpickettvoice/web/sarahpicketthero.webp"
+              alt="Sarah Pickett Voice & Speech Services website"
+            />
+          </div>
+
+        </div>
+        <div className="featured-project-status">
+  Live Site
+</div>
+      </a>
+
+
+      <div className="featured-project-copy">
         <p>
-          A warm, approachable website for an Alabama dog-training
-          business—designed to explain services clearly, earn trust
-          quickly, and make getting started feel simple.
+          A first website for a voice and speech-language pathology practice
+          in Huntsville and Madison, Alabama—designed to build trust,
+          explain services, and make appointment requests simple.
         </p>
 
         <div className="work-tags">
@@ -686,7 +693,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         </div>
 
         <a
-          href="/work/in-the-woods"
+          href="/work/sarah-pickett"
           className="work-link"
         >
           View Case Study
@@ -700,13 +707,17 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
     </div>
 
 
+    <div className="portfolio-manual-controls" role="group" aria-label="Browse portfolio projects"><button aria-label="Previous project" onClick={() => document.querySelector('.secondary-work-grid').scrollBy({left:-document.querySelector('.secondary-work-grid').clientWidth*.85,behavior:'smooth'})}>←</button><button aria-label="Next project" onClick={() => document.querySelector('.secondary-work-grid').scrollBy({left:document.querySelector('.secondary-work-grid').clientWidth*.85,behavior:'smooth'})}>→</button></div>
     {/* SECONDARY PROJECTS */}
-    <div className="secondary-work-grid">
-
+    <div className="secondary-work-grid" role="region" aria-label="Selected projects" tabIndex="0" onKeyDown={event => {
+      if (event.target !== event.currentTarget || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      event.currentTarget.scrollBy({ left: event.currentTarget.clientWidth * (event.key === 'ArrowRight' ? .8 : -.8), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    }}>
       {/* IN THE WOODS — MOBILE FIRST CARD */}
-      <article className="secondary-project mobile-carousel-inwoods">
+      <article className="secondary-project portfolio-inwoods">
 
-        <div className="secondary-project-art mobile-inwoods-visual">
+        <a className="project-preview-link" href="/work/in-the-woods" aria-label="View In The Woods Dog Training case study"><div className="secondary-project-art project-preview-visual">
           <div className="project-status-badge">
             Live Site
           </div>
@@ -715,11 +726,11 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
             src="/inthewoods/cover.png"
             alt="In The Woods Dog Training website"
           />
-        </div>
+        </div></a>
 
         <div className="secondary-project-copy">
           <div className="project-meta-row">
-            <span className="project-number">01</span>
+            <span className="project-number">02</span>
 
             <span className="project-type">
               Website Design + Development
@@ -755,7 +766,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       {/* THE SODA STOP — CONCEPT PROJECT */}
       <article className="secondary-project">
 
-        <div className="secondary-project-art soda-project-visual">
+        <a className="project-preview-link" href="/work/soda-stop-concept" aria-label="View The Soda Stop case study"><div className="secondary-project-art soda-project-visual">
 
   <div className="project-status-badge">
     Concept Project
@@ -766,12 +777,12 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
     alt="The Soda Stop concept website homepage"
   />
 
-</div>
+</div></a>
 
         <div className="secondary-project-copy">
 
           <div className="project-meta-row">
-            <span className="project-number">02</span>
+            <span className="project-number">03</span>
 
             <span className="project-type">
               Concept Soda Shop Design
@@ -808,7 +819,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
   {/* SUSAN RIPP ART */}
 <article className="secondary-project">
 
-  <div className="secondary-project-art susan-project-visual">
+  <a className="project-preview-link" href="/work/susan-ripp" aria-label="View Susan Ripp Art case study"><div className="secondary-project-art susan-project-visual">
 
   <div className="project-status-badge">
     In Development
@@ -819,12 +830,12 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
     alt="Susan Ripp Art website featuring original paintings, prints, and watercolor workshops"
   />
 
-</div>
+</div></a>
 
   <div className="secondary-project-copy">
 
     <div className="project-meta-row">
-      <span className="project-number">03</span>
+      <span className="project-number">04</span>
 
       <span className="project-type">
         Artist Portfolio + Website
@@ -861,7 +872,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       {/* ERYN DAVIS */}
       <article className="secondary-project">
 
-        <div className="secondary-project-art eryn-project-visual">
+        <a className="project-preview-link" href="/work/eryn-davis" aria-label="View Eryn Davis case study"><div className="secondary-project-art eryn-project-visual">
           <div className="project-status-badge">
             In Development
           </div>
@@ -870,11 +881,11 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
             src="/eryn-davis/eryn-davis-cover.webp"
             alt="Eryn Davis live entertainer website homepage"
           />
-        </div>
+        </div></a>
 
         <div className="secondary-project-copy">
           <div className="project-meta-row">
-            <span className="project-number">04</span>
+            <span className="project-number">05</span>
 
             <span className="project-type">
               Performer Website + Booking UX
@@ -1194,85 +1205,24 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
             </div>
           ))}
         </div>
-        <details className="builder-price-details package-explainer">
-          <summary>What both plans cover</summary>
-          <p>Standard static-site hosting and deployment management, a monthly check of key links and contact forms, and a source backup with rollback support. Third-party outages and urgent recovery have no guaranteed resolution time.</p>
-          <p>Update time resets each month and does not roll over. Six-month prepayment keeps the same monthly allowance. New pages, redesigns, integrations, ecommerce administration, and memberships are quoted separately before work starts. Domains and paid subscriptions remain separate costs.</p>
-          <p>Monthly plans can end before the next billing period. Cancel a six-month plan and unused full months are refunded at the discounted rate: $46.50 per month for Care or $84.50 for Support. The current service month is not refundable. Prepaid plans do not automatically renew.</p>
-        </details>
-        <details className="builder-price-details package-explainer">
-          <summary>Ownership and website handoff</summary>
-          <p>After full build payment, you own the agreed custom work, subject to third-party licenses. Your domain and paid service accounts stay in your name. Care manages the website for you; it does not determine ownership.</p>
-          <p>If you prefer to manage the site or work with another developer, the build includes a source-file backup and hosting/account summary. These are the code, images, and instructions used to build your site. An editing dashboard is included only when specifically agreed. New-host setup, converting the site to another platform, and extended training are quoted separately.</p>
-        </details>
-        <a className="care-guide-link" href="/2e-studio-care-guide.pdf" target="_blank" rel="noreferrer">Read the care plan guide <span aria-hidden="true">↗</span></a>
+        
+        
+        <a className="care-learn-more" href="/website-care"><span><strong>Website care, ownership & handoff</strong><small>See what’s included, how updates work, and what you own.</small></span><span aria-hidden="true">↗</span></a>
       </div>
-
-      <a
-        href="mailto:jessietowey@gmail.com"
-        className="contact-direct-email"
-      >
-        Or email me directly · jessietowey@gmail.com
-        <span aria-hidden="true">↗</span>
-      </a>
-
-      <p className="contact-location contact-location-desktop">
-      Based near Smith Lake in Alabama · Working with businesses anywhere.
-      </p>
 
     </div>
 
 
     {/* RIGHT — PROJECT INQUIRY */}
     <ProjectInquiry />
-        <p className="contact-location contact-location-mobile">
-                  Based near Smith Lake in Alabama · Working with businesses anywhere.
-                  </p>
   </div>
+
+<div className="contact-tail"><a href="mailto:jessietowey@gmail.com">Prefer email? <span>jessietowey@gmail.com</span> ↗</a><p>Based near Smith Lake in Alabama · Working with businesses anywhere.</p></div>
 
 </section>
 
       {/* Footer */}
-      <footer>
-        <h3>2e Studio</h3>
-        <p>Websites, digital systems, and creative support.</p>
-
-        <ul className="footer-links">
-          <li>
-            <a
-              href="https://linkedin.com/in/jessietowey"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/Jessie2e"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a href="mailto:jessietowey@gmail.com">Email</a>
-          </li>
-        </ul>
-
-        <p>Designed by 2e Studio</p>
-        <p
-          style={{
-            fontSize: '0.85rem',
-            marginTop: '16px',
-            opacity: 0.8,
-          }}
-        >
-          &copy; {new Date().getFullYear()} 2e Studio by Jessie Towey. All
-          rights reserved.
-        </p>
-      </footer>
+      <StudioFooter />
 
       <a
   href="#project-form"

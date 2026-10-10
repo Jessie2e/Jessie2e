@@ -6379,7 +6379,7 @@ article + article {
 ========================================================= */
 
 .susan-project-visual,
-.soda-project-visual {
+:is(.soda-project-visual, .project-preview-visual) {
   position: relative;
 
   overflow: hidden;
@@ -6388,7 +6388,7 @@ article + article {
 }
 
 .susan-project-visual img,
-.soda-project-visual img {
+:is(.soda-project-visual, .project-preview-visual) img {
   display: block;
 
   width: 100%;
@@ -6405,7 +6405,7 @@ article + article {
 .secondary-project:hover
 .susan-project-visual img,
 .secondary-project:hover
-.soda-project-visual img {
+:is(.soda-project-visual, .project-preview-visual) img {
   transform: scale(1.025);
 }
 
@@ -6518,7 +6518,7 @@ article + article {
 
 /* Susan + Soda selected-work previews */
 .susan-project-visual,
-.soda-project-visual {
+:is(.soda-project-visual, .project-preview-visual) {
   height: 320px;
 
   display: flex;
@@ -6531,7 +6531,7 @@ article + article {
 }
 
 .susan-project-visual img,
-.soda-project-visual img {
+:is(.soda-project-visual, .project-preview-visual) img {
   width: 100%;
   height: 100%;
 
@@ -6696,7 +6696,7 @@ article + article {
 
 /* Susan + Soda image cards */
 .susan-project-visual,
-.soda-project-visual {
+:is(.soda-project-visual, .project-preview-visual) {
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 14px;
@@ -6738,7 +6738,7 @@ article + article {
 
 /* screenshots */
 .susan-project-visual img,
-.soda-project-visual img {
+:is(.soda-project-visual, .project-preview-visual) img {
   display: block;
 
   width: 100%;
@@ -6992,7 +6992,7 @@ article + article {
   }
 
   .susan-project-visual,
-  .soda-project-visual {
+  :is(.soda-project-visual, .project-preview-visual) {
     height: auto;
 
     min-height: 0;
@@ -7005,7 +7005,7 @@ article + article {
   }
 
   .susan-project-visual img,
-  .soda-project-visual img {
+  :is(.soda-project-visual, .project-preview-visual) img {
     width: 100%;
     max-height: 185px;
 
@@ -8311,7 +8311,7 @@ article + article {
    Soda + Susan + Eryn only
 ========================================================= */
 
-.soda-project-visual,
+:is(.soda-project-visual, .project-preview-visual),
 .susan-project-visual,
 .eryn-project-visual {
   height: 320px;
@@ -8326,7 +8326,7 @@ article + article {
 }
 
 /* Make the actual website screenshots feel consistent */
-.soda-project-visual img,
+:is(.soda-project-visual, .project-preview-visual) img,
 .susan-project-visual img,
 .eryn-project-visual img {
   display: block;
@@ -8358,7 +8358,7 @@ article + article {
    SELECTED WORK — CONSISTENT IMAGE LAYOUT
 ========================================================= */
 
-.soda-project-visual,
+:is(.soda-project-visual, .project-preview-visual),
 .susan-project-visual,
 .eryn-project-visual {
   position: relative;
@@ -8378,7 +8378,7 @@ article + article {
 }
 
 /* Put the status bubble back in its own row */
-.soda-project-visual .project-status-badge,
+:is(.soda-project-visual, .project-preview-visual) .project-status-badge,
 .susan-project-visual .project-status-badge,
 .eryn-project-visual .project-status-badge {
   position: static;
@@ -8389,7 +8389,7 @@ article + article {
 }
 
 /* Center all 3 screenshots on the same axis */
-.soda-project-visual img,
+:is(.soda-project-visual, .project-preview-visual) img,
 .susan-project-visual img,
 .eryn-project-visual img {
   display: block;
@@ -8415,7 +8415,7 @@ article + article {
 @media (max-width: 720px) {
 
   .secondary-work-grid .mobile-inwoods-visual,
-  .secondary-work-grid .soda-project-visual,
+  .secondary-work-grid :is(.soda-project-visual, .project-preview-visual),
   .secondary-work-grid .susan-project-visual,
   .secondary-work-grid .eryn-project-visual {
     height: 225px;
@@ -8431,7 +8431,7 @@ article + article {
   }
 
   .secondary-work-grid .mobile-inwoods-visual img,
-  .secondary-work-grid .soda-project-visual img,
+  .secondary-work-grid :is(.soda-project-visual, .project-preview-visual) img,
   .secondary-work-grid .susan-project-visual img,
   .secondary-work-grid .eryn-project-visual img {
     display: block;
@@ -10190,7 +10190,7 @@ html[data-cursor-tone="dark"] .bird-steering-container img {
 }
 
 /* Selected Work — unified image-stage background */
-.secondary-work-grid .soda-project-visual,
+.secondary-work-grid :is(.soda-project-visual, .project-preview-visual),
 .secondary-work-grid .susan-project-visual,
 .secondary-work-grid .eryn-project-visual,
 .secondary-work-grid .mobile-inwoods-visual {
@@ -10220,7 +10220,7 @@ html[data-cursor-tone="dark"] .bird-steering-container img {
 
   /* Cream area fills the entire top of the card */
   .secondary-work-grid .mobile-inwoods-visual,
-  .secondary-work-grid .soda-project-visual,
+  .secondary-work-grid :is(.soda-project-visual, .project-preview-visual),
   .secondary-work-grid .susan-project-visual,
   .secondary-work-grid .eryn-project-visual {
     width: 100%;

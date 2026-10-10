@@ -1,4 +1,4 @@
-import React from 'react';
+import StudioFooter from './StudioFooter';
 
 export default function ErynDavis() {
   return (
@@ -231,14 +231,7 @@ export default function ErynDavis() {
         </section>
       </main>
 
-      <footer className="eryn-case-footer">
-        <a href="/" className="eryn-case-studio-logo">
-          <img src="/2elogo.svg" alt="2e Studio" />
-          <span>2e Studio</span>
-        </a>
-        <p>Website design + development by 2e Studio.</p>
-        <a href="/#contact">Start a Project ↗</a>
-      </footer>
+      <StudioFooter />
 
     </div>
   );

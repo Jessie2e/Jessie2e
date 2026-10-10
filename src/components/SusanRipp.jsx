@@ -1,4 +1,4 @@
-import React from 'react';
+import StudioFooter from './StudioFooter';
 
 export default function SusanRipp() {
   return (
@@ -592,17 +592,7 @@ export default function SusanRipp() {
 
 
       {/* FOOTER */}
-      <footer className="case-study-footer susan-case-footer">
-
-        <p>
-          © {new Date().getFullYear()} 2e Studio
-        </p>
-
-        <a href="/#portfolio">
-          More Work ↑
-        </a>
-
-      </footer>
+      <StudioFooter />
 
     </div>
   );
