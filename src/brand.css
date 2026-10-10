@@ -592,3 +592,26 @@ footer.studio-footer {
 .nav-work-menu summary { font-weight: 400; }
 
 @media (max-width: 720px) { .nav-work-menu summary { font-weight: 700; } }
+
+/* Featured case-study spacing stays consistent across device sizes. */
+.work-feature-row .desktop-featured-project { padding:36px; row-gap:28px; align-items:start; }
+.desktop-featured-project .featured-project-heading { margin:0; }
+.desktop-featured-project .featured-project-heading h3 { line-height:1.16; }
+.desktop-featured-project .featured-project-preview-link { margin:0 0 16px; }
+.desktop-featured-project .project-browser,
+.desktop-featured-project:hover .project-browser { transform:none; }
+.desktop-featured-project .featured-project-visual.reveal-on-scroll.is-visible,
+.desktop-featured-project:hover .featured-project-visual.reveal-on-scroll.is-visible { transform:none; }
+.desktop-featured-project .featured-project-status { left:16px; bottom:-16px; padding:10px 16px; }
+.desktop-featured-project .featured-project-copy { min-width:0; }
+.desktop-featured-project .featured-project-copy > p { margin-top:0; }
+.desktop-featured-project .work-link { margin-bottom:0; }
+@media(max-width:720px){
+ .work-feature-row .desktop-featured-project { padding:24px; row-gap:24px; }
+ .desktop-featured-project .featured-project-heading h3 { font-size:clamp(23px,5.8vw,34px); }
+ .desktop-featured-project .work-tags { margin-bottom:24px; }
+ .desktop-featured-project .work-link { min-height:44px; }
+}
+@media(max-width:1049px){
+ .work-feature-row .desktop-featured-project { display:grid!important; grid-template-columns:minmax(0,1fr); }
+}
