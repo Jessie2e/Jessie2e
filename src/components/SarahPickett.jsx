@@ -46,10 +46,10 @@ export default function SarahPickett() {
     document.title = 'Sarah Pickett Website Design Case Study | 2e Studio';
     const values = {
       'meta[name="description"]': 'Website design for Sarah Pickett’s voice and speech-language pathology practice in Huntsville and Madison, Alabama. A case study by 2e Studio.',
-      'link[rel="canonical"]': 'https://jessie2e.com/work/sarah-pickett',
+      'link[rel="canonical"]': 'https://jessie2e.com/work/sarah-pickett/',
       'meta[property="og:title"]': 'Sarah Pickett Website Design Case Study | 2e Studio',
       'meta[property="og:description"]': 'A custom website for Sarah Pickett Voice & Speech Services. Explore the design, mobile experience, and client story.',
-      'meta[property="og:url"]': 'https://jessie2e.com/work/sarah-pickett',
+      'meta[property="og:url"]': 'https://jessie2e.com/work/sarah-pickett/',
       'meta[property="og:image"]': 'https://jessie2e.com/sarahpickettvoice/web/sarahpicketthero.webp',
       'meta[name="twitter:title"]': 'Sarah Pickett Website Design Case Study | 2e Studio',
       'meta[name="twitter:description"]': 'A first website for Sarah Pickett Voice & Speech Services, designed around trust, local discovery, and appointment requests.',
@@ -63,17 +63,17 @@ export default function SarahPickett() {
   return <div className="sp-case">
     <title>Sarah Pickett Website Design Case Study | 2e Studio</title>
     <meta name="description" content="Website design for Sarah Pickett’s voice and speech-language pathology practice in Huntsville and Madison, Alabama. A case study by 2e Studio." />
-    <link rel="canonical" href="https://jessie2e.com/work/sarah-pickett" />
+    <link rel="canonical" href="https://jessie2e.com/work/sarah-pickett/" />
     <meta property="og:title" content="A first website. A confident next chapter. | Sarah Pickett × 2e Studio" />
     <meta property="og:description" content="A custom website for Sarah Pickett Voice & Speech Services. Explore the design, mobile experience, and client story." />
-    <meta property="og:url" content="https://jessie2e.com/work/sarah-pickett" />
+    <meta property="og:url" content="https://jessie2e.com/work/sarah-pickett/" />
     <meta property="og:image" content="https://jessie2e.com/sarahpickettvoice/web/sarahpicketthero.webp" />
     <meta name="twitter:title" content="Sarah Pickett Website Design Case Study | 2e Studio" />
     <meta name="twitter:description" content="A first website for Sarah Pickett Voice & Speech Services, designed around trust, local discovery, and appointment requests." />
     <meta name="twitter:image" content="https://jessie2e.com/sarahpickettvoice/web/sarahpicketthero.webp" />
     <meta name="twitter:image:alt" content="Sarah Pickett voice and speech services website homepage" />
     <meta property="og:image:alt" content="Sarah Pickett voice and speech services website homepage" />
-    <script type="application/ld+json">{JSON.stringify({'@context':'https://schema.org','@type':'CreativeWork',name:'Sarah Pickett Voice & Speech Services — Website Design Case Study',url:'https://jessie2e.com/work/sarah-pickett',description:'Custom website design for a voice-specialized speech-language pathology practice serving Huntsville and Madison, Alabama, with an appointment request form.',creator:{'@type':'Organization',name:'2e Studio',url:'https://jessie2e.com/'},image:'https://jessie2e.com/sarahpickettvoice/web/sarahpicketthero.webp',about:{'@type':'Organization',name:'Sarah Pickett Voice & Speech Services',url:'https://www.sarahpickettvoice.com/',areaServed:[{'@type':'City',name:'Huntsville, Alabama'},{'@type':'City',name:'Madison, Alabama'}]}})}</script>
+    <script type="application/ld+json">{JSON.stringify({'@context':'https://schema.org','@type':'CreativeWork',name:'Sarah Pickett Voice & Speech Services — Website Design Case Study',url:'https://jessie2e.com/work/sarah-pickett/',description:'Custom website design for a voice-specialized speech-language pathology practice serving Huntsville and Madison, Alabama, with an appointment request form.',creator:{'@type':'Organization',name:'2e Studio',url:'https://jessie2e.com/'},image:'https://jessie2e.com/sarahpickettvoice/web/sarahpicketthero.webp',about:{'@type':'Organization',name:'Sarah Pickett Voice & Speech Services',url:'https://www.sarahpickettvoice.com/',areaServed:[{'@type':'City',name:'Huntsville, Alabama'},{'@type':'City',name:'Madison, Alabama'}]}})}</script>
     <header className="sp-nav"><a href="/" className="sp-logo"><img src="/2elogo.svg" alt="" />2e Studio</a><a href="/#portfolio">← Back to work</a></header>
     <main>
       <section className="sp-hero sp-wrap">

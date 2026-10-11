@@ -1,8 +1,10 @@
+import PageMetadata from './PageMetadata';
 import StudioFooter from './StudioFooter';
 
 export default function SusanRipp() {
   return (
     <div className="susan-case">
+      <PageMetadata title="Susan Ripp Artist Website Case Study | 2e Studio" description="An artist website in development, bringing watercolor collections, prints, workshops, and courses together around Susan Ripp’s work." path="/work/susan-ripp/" />
 
       {/* NAV */}
       <header className="case-study-nav susan-case-nav">

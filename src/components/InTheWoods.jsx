@@ -1,8 +1,10 @@
+import PageMetadata from './PageMetadata';
 import StudioFooter from './StudioFooter';
 
 export default function InTheWoods() {
   return (
     <div className="case-study">
+      <PageMetadata title="In The Woods Dog Training Website Case Study | 2e Studio" description="A custom website and visual identity for an Alabama dog-training business, designed to explain services and make getting started simple." path="/work/in-the-woods/" />
 
       {/* TOP NAV */}
       <header className="case-study-nav">

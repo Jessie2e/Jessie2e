@@ -4,17 +4,17 @@ import { CARE_PLANS } from '../packages';
 export default function WebsiteCare() {
   useEffect(() => {
     document.title = 'Website Care, Ownership & Handoff | 2e Studio';
-    const values = { 'meta[name="description"]': 'Explore 2e Studio website care plans, hosting, monthly updates, website ownership, cancellation terms, and source-file handoff.', 'link[rel="canonical"]': 'https://jessie2e.com/website-care', 'meta[property="og:title"]': 'Website Care, Ownership & Handoff | 2e Studio', 'meta[property="og:description"]': 'A clear guide to website care, monthly updates, ownership, and handoff with 2e Studio.', 'meta[property="og:url"]': 'https://jessie2e.com/website-care', 'meta[property="og:image"]': 'https://jessie2e.com/social-share.png', 'meta[name="twitter:title"]': 'Website Care, Ownership & Handoff | 2e Studio', 'meta[name="twitter:description"]': 'Website care plans, updates, ownership, and handoff explained by 2e Studio.', 'meta[name="twitter:image"]': 'https://jessie2e.com/social-share.png' };
+    const values = { 'meta[name="description"]': 'Explore 2e Studio website care plans, hosting, monthly updates, website ownership, cancellation terms, and source-file handoff.', 'link[rel="canonical"]': 'https://jessie2e.com/website-care/', 'meta[property="og:title"]': 'Website Care, Ownership & Handoff | 2e Studio', 'meta[property="og:description"]': 'A clear guide to website care, monthly updates, ownership, and handoff with 2e Studio.', 'meta[property="og:url"]': 'https://jessie2e.com/website-care/', 'meta[property="og:image"]': 'https://jessie2e.com/social-share.png', 'meta[name="twitter:title"]': 'Website Care, Ownership & Handoff | 2e Studio', 'meta[name="twitter:description"]': 'Website care plans, updates, ownership, and handoff explained by 2e Studio.', 'meta[name="twitter:image"]': 'https://jessie2e.com/social-share.png' };
     Object.entries(values).forEach(([selector,value]) => { const tags = Array.from(document.head.querySelectorAll(selector)); tags.slice(1).forEach(tag => tag.remove()); tags[0]?.setAttribute(selector.startsWith('link') ? 'href' : 'content',value); });
     document.head.querySelectorAll('title').forEach((tag,i)=>{if(i>0)tag.remove()});
   }, []);
   return <div className="care-guide-page">
     <title>Website Care, Ownership & Handoff | 2e Studio</title>
     <meta name="description" content="Explore 2e Studio website care plans, hosting, monthly updates, website ownership, cancellation terms, and source-file handoff." />
-    <link rel="canonical" href="https://jessie2e.com/website-care" />
+    <link rel="canonical" href="https://jessie2e.com/website-care/" />
     <meta property="og:title" content="Website Care, Ownership & Handoff | 2e Studio" />
     <meta property="og:description" content="A clear guide to website care, monthly updates, ownership, and handoff with 2e Studio." />
-    <meta property="og:url" content="https://jessie2e.com/website-care" />
+    <meta property="og:url" content="https://jessie2e.com/website-care/" />
     <meta property="og:image" content="https://jessie2e.com/social-share.png" />
     <meta name="twitter:title" content="Website Care, Ownership & Handoff | 2e Studio" />
     <meta name="twitter:description" content="Website care plans, updates, ownership, and handoff explained by 2e Studio." />

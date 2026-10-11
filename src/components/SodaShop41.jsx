@@ -1,7 +1,9 @@
+import PageMetadata from './PageMetadata';
 import StudioFooter from './StudioFooter';
 export default function SodaStopConcept() {
   return (
     <div className="soda-case">
+      <PageMetadata title="The Soda Stop Website & Brand Concept | 2e Studio" description="A fictional Smith Lake soda-shop concept by 2e Studio exploring custom website design, visual identity, menus, and ordering." path="/work/soda-stop-concept/" />
 
       {/* NAV */}
       <header className="soda-case-nav">

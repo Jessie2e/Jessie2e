@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const INITIAL = { name: '', businessName: '', preferredContact: 'Email', email: '', phone: '', message: '', currentSite: '', timeline: '', budget: '' };
+const INITIAL = { name: '', businessName: '', preferredContact: 'Email', email: '', phone: '', message: '', currentSite: '', timeline: '', budget: '', foundUs: '' };
 
 export default function ProjectInquiry() {
   const [values, setValues] = useState(INITIAL);
@@ -44,6 +44,7 @@ export default function ProjectInquiry() {
           <form className="contact-form contact-form-editorial quick-inquiry-form" onSubmit={submit}>
             {field('name', 'Your name', 'text', true)}
             {field('businessName', 'Business or project name')}
+            {field('foundUs', 'How did you find 2e Studio?', 'text', false, 'Google, Instagram, a friend…')}
             <div className="form-group quick-span-2">
               <label htmlFor="inquiry-preferredContact">How should I get back to you?</label>
               <select id="inquiry-preferredContact" name="preferredContact" className="form-control" value={values.preferredContact} onChange={change}>

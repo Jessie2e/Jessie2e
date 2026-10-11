@@ -1,8 +1,10 @@
+import PageMetadata from './PageMetadata';
 import StudioFooter from './StudioFooter';
 
 export default function ErynDavis() {
   return (
     <div className="eryn-case">
+      <PageMetadata title="Eryn Davis Performer Website Case Study | 2e Studio" description="A performer website in development, designed around live entertainment, performance dates, and an easy event inquiry path." path="/work/eryn-davis/" />
 
       <header className="eryn-case-nav">
         <a href="/" className="eryn-case-studio-logo">

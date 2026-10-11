@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import PageMetadata from './PageMetadata';
 import StudioFooter from './StudioFooter';
 import './Resources.css';
 const sections = [
@@ -8,8 +8,7 @@ const sections = [
  ['04','Plan the practical pieces','List forms, booking tools, shops, and existing accounts. Keep your domain in your name and arrange secure access when needed.']
 ];
 export default function Resources(){
- useEffect(()=>{ document.title='Website Planning Resources | 2e Studio'; const meta=document.querySelector('meta[name="description"]');meta?.setAttribute('content','Free website planning checklist and practical resources for small businesses from 2e Studio.');document.querySelector('link[rel="canonical"]')?.setAttribute('href','https://jessie2e.com/resources');},[]);
- return <div className="resources-page"><title>Website Planning Resources | 2e Studio</title><meta name="description" content="Free website planning checklist and practical resources for small businesses from 2e Studio."/><link rel="canonical" href="https://jessie2e.com/resources"/>
+ return <div className="resources-page"><PageMetadata title="Free Website Planning & Care Guides | 2e Studio" description="Free website planning and ongoing website care checklists for small businesses. Practical printable guides from 2e Studio." path="/resources/"/>
  <header className="resources-nav"><a href="/"><img src="/2elogo.svg" alt=""/>2e Studio</a><a href="/">← Back to the studio</a></header>
  <main className="resources-main"><section className="resources-hero"><p className="resources-kicker">A LITTLE HELP BEFORE THE BIG BUILD</p><h1>Good websites start<br/>with <em>a little clarity.</em></h1><p>You don’t need every answer before getting started. These resources help you gather your ideas, find the important pieces, and feel ready for the next step.</p></section>
  <section className="resources-offers" aria-label="Website planning resources"><article className="resource-free"><div className="resource-cover" aria-hidden="true"><img src="/2elogo.svg" alt=""/><span>THE 2e STUDIO CHECKLIST</span><strong>Before you build<br/>your website.</strong><i>Clear goals. Good content. A confident start.</i></div><div className="resource-copy"><p className="resources-kicker">FREE DOWNLOAD · 2-PAGE PDF</p><h2>Before You Build Your Website</h2><p>A practical checklist for business owners gathering content, photos, and ideas for a new website. Print it, mark it up, and bring it to your first conversation.</p><a className="resource-button" href="/resources/website-planning-checklist.pdf" download>Get the free checklist ↓</a><small>No email signup needed.</small></div></article>
