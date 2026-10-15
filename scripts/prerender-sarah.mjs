@@ -30,8 +30,8 @@ try {
     await writeFile(`dist/${path}/index.html`, html);
     console.log(`Prerendered /${path} with crawlable content and unique metadata.`);
   }
-  // Preserve raw recordings and screenshots locally, outside the deployable build.
+  // Preserve raw recordings and screenshots locally; publish the page-specific social image.
   for (const name of await readdir('dist/sarahpickettvoice')) {
-    if (/\.(png|mov)$/i.test(name)) await unlink(`dist/sarahpickettvoice/${name}`);
+    if (/\.(png|mov)$/i.test(name) && name !== '2eStudio-SarahPickettFB.png') await unlink(`dist/sarahpickettvoice/${name}`);
   }
 } finally { await server.close(); }

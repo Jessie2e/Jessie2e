@@ -2,6 +2,10 @@ import StudioFooter from './StudioFooter';
 import { useEffect, useRef, useState } from 'react';
 import './SarahPickett.css';
 const base = '/sarahpickettvoice/web/';
+const socialTitle = 'Sarah Pickett Voice & Speech Services | 2e Studio';
+const socialDescription = "A first website. A confident next chapter. See how 2e Studio helped bring Sarah's practice online.";
+const socialImage = 'https://jessie2e.com/sarahpickettvoice/2eStudio-SarahPickettFB.png';
+const socialImageAlt = 'Sarah Pickett Voice & Speech Services website by 2e Studio';
 const imageSizes = {'mobilehero': [736, 1594], 'speechappointmentrequestform': [1800, 933], 'aboutsarahpickettslp': [1800, 933], 'mobileapptform': [736, 1594], 'Pricingandservices': [1800, 933], 'mobilepricing': [736, 1594], 'mobileabout': [736, 1594], 'sarahpicketthero': [1800, 933]};
 const quote = 'Jessie made the website creation process so easy! I gave her the information and content I wanted to include, and she turned it into a beautiful, professional, and functional website. I especially appreciate her eye for graphic design, her knowledge of website building, and her ability to incorporate functional elements like contact forms seamlessly into the design. She took what felt like an overwhelming task and made the whole process simple and stress-free. I’m so happy with how my website turned out and would absolutely recommend working with her!';
 function Screenshot({ name, alt, eager = false }) {
@@ -37,7 +41,7 @@ function MobileWalkthrough() {
 export default function SarahPickett() {
   const gallery = useRef(null);
   useEffect(() => {
-    const selectors = ['title', 'meta[name="description"]', 'link[rel="canonical"]', 'meta[property="og:title"]', 'meta[property="og:description"]', 'meta[property="og:url"]', 'meta[property="og:image"]', 'meta[name="twitter:title"]', 'meta[name="twitter:description"]', 'meta[name="twitter:image"]', 'meta[name="twitter:image:alt"]', 'meta[property="og:image:alt"]'];
+    const selectors = ['title', 'meta[name="description"]', 'link[rel="canonical"]', 'meta[property="og:title"]', 'meta[property="og:description"]', 'meta[property="og:url"]', 'meta[property="og:image"]', 'meta[name="twitter:title"]', 'meta[name="twitter:description"]', 'meta[name="twitter:image"]', 'meta[name="twitter:image:alt"]', 'meta[property="og:image:alt"]', 'meta[property="og:image:width"]', 'meta[property="og:image:height"]', 'meta[property="og:image:type"]'];
     const removed = [];
     selectors.forEach(selector => {
       const tags = Array.from(document.head.querySelectorAll(selector));
@@ -47,15 +51,18 @@ export default function SarahPickett() {
     const values = {
       'meta[name="description"]': 'Website design for Sarah Pickett’s voice and speech-language pathology practice in Huntsville and Madison, Alabama. A case study by 2e Studio.',
       'link[rel="canonical"]': 'https://jessie2e.com/work/sarah-pickett/',
-      'meta[property="og:title"]': 'Sarah Pickett Website Design Case Study | 2e Studio',
-      'meta[property="og:description"]': 'A custom website for Sarah Pickett Voice & Speech Services. Explore the design, mobile experience, and client story.',
+      'meta[property="og:title"]': socialTitle,
+      'meta[property="og:description"]': socialDescription,
       'meta[property="og:url"]': 'https://jessie2e.com/work/sarah-pickett/',
-      'meta[property="og:image"]': 'https://jessie2e.com/sarahpickettvoice/web/sarahpicketthero.webp',
-      'meta[name="twitter:title"]': 'Sarah Pickett Website Design Case Study | 2e Studio',
-      'meta[name="twitter:description"]': 'A first website for Sarah Pickett Voice & Speech Services, designed around trust, local discovery, and appointment requests.',
-      'meta[name="twitter:image"]': 'https://jessie2e.com/sarahpickettvoice/web/sarahpicketthero.webp',
-      'meta[name="twitter:image:alt"]': 'Sarah Pickett voice and speech services website homepage',
-      'meta[property="og:image:alt"]': 'Sarah Pickett voice and speech services website homepage'
+      'meta[property="og:image"]': socialImage,
+      'meta[name="twitter:title"]': socialTitle,
+      'meta[name="twitter:description"]': socialDescription,
+      'meta[name="twitter:image"]': socialImage,
+      'meta[name="twitter:image:alt"]': socialImageAlt,
+      'meta[property="og:image:alt"]': socialImageAlt,
+      'meta[property="og:image:width"]': '1200',
+      'meta[property="og:image:height"]': '630',
+      'meta[property="og:image:type"]': 'image/png'
     };
     Object.entries(values).forEach(([selector, value]) => document.head.querySelector(selector)?.setAttribute(selector.startsWith('link') ? 'href' : 'content', value));
     return () => removed.forEach(tag => document.head.appendChild(tag));
@@ -64,15 +71,18 @@ export default function SarahPickett() {
     <title>Sarah Pickett Website Design Case Study | 2e Studio</title>
     <meta name="description" content="Website design for Sarah Pickett’s voice and speech-language pathology practice in Huntsville and Madison, Alabama. A case study by 2e Studio." />
     <link rel="canonical" href="https://jessie2e.com/work/sarah-pickett/" />
-    <meta property="og:title" content="A first website. A confident next chapter. | Sarah Pickett × 2e Studio" />
-    <meta property="og:description" content="A custom website for Sarah Pickett Voice & Speech Services. Explore the design, mobile experience, and client story." />
+    <meta property="og:title" content={socialTitle} />
+    <meta property="og:description" content={socialDescription} />
     <meta property="og:url" content="https://jessie2e.com/work/sarah-pickett/" />
-    <meta property="og:image" content="https://jessie2e.com/sarahpickettvoice/web/sarahpicketthero.webp" />
-    <meta name="twitter:title" content="Sarah Pickett Website Design Case Study | 2e Studio" />
-    <meta name="twitter:description" content="A first website for Sarah Pickett Voice & Speech Services, designed around trust, local discovery, and appointment requests." />
-    <meta name="twitter:image" content="https://jessie2e.com/sarahpickettvoice/web/sarahpicketthero.webp" />
-    <meta name="twitter:image:alt" content="Sarah Pickett voice and speech services website homepage" />
-    <meta property="og:image:alt" content="Sarah Pickett voice and speech services website homepage" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta name="twitter:title" content={socialTitle} />
+    <meta name="twitter:description" content={socialDescription} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
+    <meta property="og:image:alt" content={socialImageAlt} />
     <script type="application/ld+json">{JSON.stringify({'@context':'https://schema.org','@type':'CreativeWork',name:'Sarah Pickett Voice & Speech Services — Website Design Case Study',url:'https://jessie2e.com/work/sarah-pickett/',description:'Custom website design for a voice-specialized speech-language pathology practice serving Huntsville and Madison, Alabama, with an appointment request form.',creator:{'@type':'Organization',name:'2e Studio',url:'https://jessie2e.com/'},image:'https://jessie2e.com/sarahpickettvoice/web/sarahpicketthero.webp',about:{'@type':'Organization',name:'Sarah Pickett Voice & Speech Services',url:'https://www.sarahpickettvoice.com/',areaServed:[{'@type':'City',name:'Huntsville, Alabama'},{'@type':'City',name:'Madison, Alabama'}]}})}</script>
     <header className="sp-nav"><a href="/" className="sp-logo"><img src="/2elogo.svg" alt="" />2e Studio</a><a href="/#portfolio">← Back to work</a></header>
     <main>
