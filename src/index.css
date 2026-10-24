@@ -10018,6 +10018,7 @@ html[data-cursor-tone="dark"] .bird-steering-container img {
 }
 
 .about-character-stage .about-jessie-image {
+  height: auto;
   position: relative;
   z-index: 3;
   display: block;
