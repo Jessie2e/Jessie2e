@@ -1,10 +1,24 @@
 import StudioFooter from './components/StudioFooter';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { PROJECT_TIERS, CARE_PLANS } from './packages';
 import ProjectInquiry from './components/ProjectInquiry';
 export default function App() {
   const [isBirdFlying, setIsBirdFlying] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const workMenu = useRef(null);
+
+  useEffect(() => {
+    // A touch link may blur the summary before its click fires (notably on iOS).
+    // Dismiss only for an actual outside tap, so native link activation can finish.
+    const dismissOutside = event => {
+      if (workMenu.current && !workMenu.current.contains(event.target)) {
+        workMenu.current.open = false;
+      }
+    };
+    document.addEventListener('pointerdown', dismissOutside);
+    return () => document.removeEventListener('pointerdown', dismissOutside);
+  }, []);
+
   const [hideMobileCta, setHideMobileCta] = useState(false);
 
 useEffect(() => {
@@ -284,11 +298,11 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
   <ul className={`nav-links ${isNavOpen ? "nav-links-open" : ""}`}>
     <li>
-      <details className="nav-work-menu" onKeyDown={e => {if(e.key === 'Escape') e.currentTarget.open=false;}} onBlur={e => {if(!e.currentTarget.contains(e.relatedTarget)) e.currentTarget.open=false;}}>
+      <details ref={workMenu} className="nav-work-menu" onKeyDown={e => {if(e.key === 'Escape') { e.currentTarget.open=false; e.currentTarget.querySelector('summary').focus(); }}}>
         <summary>Work <span aria-hidden="true">⌄</span></summary>
         <div className="nav-work-projects">
           <a href="#portfolio" onClick={e => {setIsNavOpen(false);e.currentTarget.closest('details').open=false;}}>All selected work ↗</a>
-          {[['sarah-pickett','Sarah Pickett'],['dcg-land-management','DCG Land Management'],['in-the-woods','In The Woods'],['soda-stop-concept','The Soda Stop'],['susan-ripp','Susan Ripp Art'],['eryn-davis','Eryn Davis']].map(([slug,name]) => <a key={slug} href={`/work/${slug}`} onClick={() => setIsNavOpen(false)}>{name}</a>)}
+          {[['sarah-pickett','Sarah Pickett'],['dcg-land-management','DCG Land Management'],['in-the-woods','In The Woods'],['soda-stop-concept','The Soda Stop'],['susan-ripp','Susan Ripp Art'],['eryn-davis','Eryn Davis']].map(([slug,name]) => <a key={slug} href={`/work/${slug}/`}>{name}</a>)}
         </div>
       </details>
     </li>
