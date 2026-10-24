@@ -297,7 +297,7 @@ export default function InTheWoods() {
           </h3>
 
           <p>
-            Alabama
+            Cullman, Alabama
           </p>
 
         </div>
@@ -330,6 +330,17 @@ export default function InTheWoods() {
 
         </div>
 
+        <div className="woods-project-palette">
+          <p className="case-study-label">COLOR PALETTE</p>
+          <ul aria-label="In The Woods website brand colors">
+            {[
+              ['Olive', '#5A5E44'],
+              ['Warm beige', '#E9E0D7'],
+              ['Soft pink', '#E7AFC7'],
+              ['Dark ink', '#0F0904'],
+            ].map(([name, color]) => <li key={color}><span className="woods-palette-color" style={{ backgroundColor: color }} aria-hidden="true" /><span>{name}</span><small>{color}</small></li>)}
+          </ul>
+        </div>
       </section>
 
 

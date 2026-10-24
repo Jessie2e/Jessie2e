@@ -709,3 +709,42 @@ footer.studio-footer {
 .studio-service-area a{color:#602b47;text-underline-offset:3px}
 .studio-area-cta{display:inline-flex;align-items:center;min-height:44px;font-weight:700;font-size:14px}
 @media(max-width:720px){.studio-service-area{grid-template-columns:1fr;gap:18px;padding:28px 24px}.studio-service-area h2 br{display:none}.studio-service-area p:not(.studio-area-kicker){font-size:14px}}
+
+/* Case-study color bands extend to the page edges; inner wrappers keep the copy contained. */
+.soda-case > section,
+.susan-case > .susan-case-hero,
+.susan-case > .susan-case-intro,
+.susan-case > .susan-paths,
+.susan-case > .susan-shop-section,
+.susan-case > .susan-mobile-section,
+.susan-case > .susan-visual-direction,
+.susan-case > .susan-case-info,
+.case-study > .case-study-section,
+.case-study > .case-study-brand,
+.case-study > .case-study-info,
+.eryn-case > main > section {
+  width: 100%;
+  max-width: none;
+}
+/* Keep the decorative circle entirely inside the full-width hero. */
+.soda-case-hero::before {
+  width: clamp(160px, 26vw, 360px);
+  height: auto;
+  aspect-ratio: 1;
+  top: 24px;
+  right: clamp(20px, 5vw, 96px);
+  pointer-events: none;
+}
+.case-study .case-study-info p:not(.case-study-label) { color: #F5F3EC; }
+.case-study .case-study-info .case-study-label { color: #AEE5D9; }
+.woods-project-palette { grid-column: 1 / -1; border-top: 1px solid #ffffff38; padding-top: 28px; }
+.woods-project-palette ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; list-style: none; padding: 0; margin: 0; }
+.woods-project-palette li { display: grid; gap: 6px; font-size: 14px; color: #F5F3EC; }
+.woods-palette-color { display: block; height: 32px; border: 1px solid #ffffff50; border-radius: 4px; margin-bottom: 4px; }
+.woods-project-palette small { color: #D5E5DF; font-size: 12px; letter-spacing: .04em; }
+@media (max-width: 800px) {
+  .case-study .case-study-info { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
+  .case-study-info-item:first-child { grid-column: 1 / -1; }
+  .woods-project-palette ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .woods-project-palette { padding-top: 24px; }
+}
