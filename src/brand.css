@@ -585,7 +585,7 @@ footer.studio-footer {
 .nav-work-projects a:hover,.nav-work-projects a:focus-visible {background:#e8ecdf;}
 @media(min-width:721px){.nav-links{gap:clamp(14px,2.2vw,32px);}}
 @media(max-width:800px){.studio-footer-actions{grid-template-columns:1fr;}}
-@media(max-width:720px){.nav-work-menu summary{justify-content:center;}.nav-work-projects{position:static;width:100%;box-shadow:none;margin-bottom:8px;padding:4px 12px;}.nav-work-projects a{justify-content:center;}.nav-links-open{max-height:calc(100dvh - 70px);overflow-y:auto;}}
+@media(max-width:720px){.nav-work-menu summary{justify-content:center;}.nav-work-projects{position:static;width:100%;box-shadow:none;margin-bottom:8px;padding:4px 12px;}.nav-work-projects a{justify-content:center;}.nav-links.nav-links-open{max-height:calc(100dvh - 70px);overflow-y:auto;}}
 
 @media(max-width:720px){.nav-links .nav-work-menu{width:100%;}.nav-links .nav-work-menu summary{width:100%;justify-content:center;}}
 

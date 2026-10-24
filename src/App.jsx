@@ -9,14 +9,14 @@ export default function App() {
 
   useEffect(() => {
     // A touch link may blur the summary before its click fires (notably on iOS).
-    // Dismiss only for an actual outside tap, so native link activation can finish.
+    // Dismiss after an outside click, so touch targets stay put until activation.
     const dismissOutside = event => {
       if (workMenu.current && !workMenu.current.contains(event.target)) {
         workMenu.current.open = false;
       }
     };
-    document.addEventListener('pointerdown', dismissOutside);
-    return () => document.removeEventListener('pointerdown', dismissOutside);
+    document.addEventListener('click', dismissOutside);
+    return () => document.removeEventListener('click', dismissOutside);
   }, []);
 
   const [hideMobileCta, setHideMobileCta] = useState(false);
