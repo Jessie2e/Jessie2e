@@ -29,6 +29,17 @@
     background-color: var(--soft-white);
   }
 
+  /* Preserve intrinsic image proportions when responsive rules resize the width.
+     Component rules can still set an intentional height for cropped frames. */
+  img {
+    height: auto;
+  }
+
+  /* Keep the bird logo proportional within existing square navigation slots. */
+  img[src="/2elogo.svg"] {
+    object-fit: contain;
+  }
+
   /* Hide the default operating system cursor everywhere */
   html, body, a, button, input, select, textarea {
     cursor: none !important;
