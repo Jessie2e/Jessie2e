@@ -4,7 +4,7 @@ import StudioFooter from './StudioFooter';
 export default function InTheWoods() {
   return (
     <div className="case-study">
-      <PageMetadata title="In The Woods Dog Training Website Case Study | 2e Studio" description="A custom website and visual identity for an Alabama dog-training business, designed to explain services and make getting started simple." path="/work/in-the-woods/" />
+      <PageMetadata title="Cullman Dog Training Website Design | 2e Studio" description="Custom website design and visual identity for In The Woods Dog Training in Cullman, Alabama. See how 2e Studio presents services and simplifies inquiries." path="/work/in-the-woods/" />
 
       {/* TOP NAV */}
       <header className="case-study-nav">
@@ -34,7 +34,7 @@ export default function InTheWoods() {
           </h1>
 
           <p className="case-study-lead">
-            A warm, personality-driven website for an Alabama dog-training
+            A warm, personality-driven website for a Cullman, Alabama dog-training
             business, designed to build trust, clearly explain services,
             and make getting started feel simple.
           </p>
@@ -79,9 +79,9 @@ export default function InTheWoods() {
           </div>
 
           <img
-            src="/inthewoods/cover.png"
+            src="/inthewoods/cover.webp"
             alt="In The Woods Dog Training website homepage"
-          />
+           width="3280" height="1500" decoding="async" loading="eager" />
 
         </div>
 
@@ -131,9 +131,9 @@ export default function InTheWoods() {
 
         <div className="case-study-feature-image">
           <img
-            src="/inthewoods/about.png"
+            src="/inthewoods/about.webp"
             alt="About section of the In The Woods Dog Training website"
-          />
+           width="2880" height="1500" decoding="async" loading="lazy" />
         </div>
 
         <div className="case-study-feature-copy">
@@ -187,9 +187,9 @@ export default function InTheWoods() {
 
             <div className="brand-detail-visual logo-visual">
               <img
-                src="/inthewoods/inthewoodslogo.png"
+                src="/inthewoods/inthewoodslogo.webp"
                 alt="In The Woods Dog Training logo"
-              />
+               width="2048" height="2048" decoding="async" loading="lazy" />
             </div>
 
             <div className="brand-detail-copy">
@@ -222,7 +222,7 @@ export default function InTheWoods() {
                 <img
                   src="/inthewoods/pawprintCursor.gif"
                   alt="Animation demonstrating the custom paw-print cursor"
-                />
+                 width="414" height="101" decoding="async" loading="lazy" />
               </div>
 
             </div>
@@ -275,9 +275,9 @@ export default function InTheWoods() {
 
         <div className="case-study-feature-image">
           <img
-            src="/inthewoods/contact.png"
+            src="/inthewoods/contact.webp"
             alt="Contact section of the In The Woods Dog Training website"
-          />
+           width="2880" height="2000" decoding="async" loading="lazy" />
         </div>
 
       </section>

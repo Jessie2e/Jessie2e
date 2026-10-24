@@ -1,0 +1,6 @@
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/portfolio/*
+  Cache-Control: public, max-age=86400, must-revalidate
+/dcg-land-management/*
+  Cache-Control: public, max-age=86400, must-revalidate

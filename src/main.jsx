@@ -10,6 +10,7 @@ import SusanRipp from './components/SusanRipp.jsx'
 import SodaShop41 from './components/SodaShop41.jsx'
 import ErynDavis from './components/ErynDavis.jsx'
 import SarahPickett from './components/SarahPickett.jsx'
+import DCGLandManagement from './components/DCGLandManagement.jsx'
 import CustomCursor from './components/CustomCursor.jsx'
 import './index.css'
 import './brand.css'
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/resources" element={<Resources />} />
         <Route path="/website-care" element={<WebsiteCare />} />
         <Route path="/work/sarah-pickett" element={<SarahPickett />} />
+        <Route path="/work/dcg-land-management" element={<DCGLandManagement />} />
 
         <Route
           path="/"

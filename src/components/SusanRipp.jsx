@@ -88,9 +88,9 @@ export default function SusanRipp() {
           </div>
 
           <img
-            src="/susan-ripp/hero.png"
+            src="/susan-ripp/hero.webp"
             alt="Susan Ripp Art website homepage"
-          />
+           width="2480" height="1238" decoding="async" loading="eager" />
 
         </div>
 
@@ -268,9 +268,9 @@ export default function SusanRipp() {
         <div className="susan-editorial-image">
 
           <img
-            src="/susan-ripp/community.png"
+            src="/susan-ripp/community.webp"
             alt="Susan Ripp Art website section featuring original paintings, prints, and watercolor workshops"
-          />
+           width="2336" height="1448" decoding="async" loading="lazy" />
 
         </div>
 
@@ -328,7 +328,7 @@ export default function SusanRipp() {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             aria-label="Scrolling view of the Susan Ripp Art online shop"
           >
             <source
@@ -351,9 +351,9 @@ export default function SusanRipp() {
         <div className="susan-course-image">
 
           <img
-            src="/susan-ripp/courses.png"
+            src="/susan-ripp/courses.webp"
             alt="Susan Ripp Art online watercolor courses page"
-          />
+           width="3358" height="1284" decoding="async" loading="lazy" />
 
         </div>
 
@@ -438,7 +438,7 @@ export default function SusanRipp() {
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
                 aria-label="Mobile view of the Susan Ripp Art website"
               >
                 <source

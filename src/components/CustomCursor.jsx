@@ -6,7 +6,7 @@ export default function CustomCursor() {
   const [isFlapping, setIsFlapping] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   const [isCursorEnabled, setIsCursorEnabled] = useState(false);
-  
+
   const lastMousePos = useRef({ x: 0, y: 0 });
   const flapTimeout = useRef(null);
 
@@ -29,17 +29,19 @@ export default function CustomCursor() {
 
   useEffect(() => {
     if (!isCursorEnabled) return undefined;
-    const handleMouseMove = (e) => {
+    let frame = 0;
+    let latestPointer = null;
+    const updatePointer = (e) => {
       const { clientX: x, clientY: y } = e;
-      
+
       const dx = x - lastMousePos.current.x;
       const dy = y - lastMousePos.current.y;
       const distance = Math.sqrt(dx * dx + dy * dy);
 
       if (distance > 1.5) {
-        let angle = Math.atan2(dy, dx) * (180 / Math.PI) + 45; 
+        let angle = Math.atan2(dy, dx) * (180 / Math.PI) + 45;
         setRotation(angle);
-        
+
         if (distance > 12) {
           setIsFlapping(true);
           clearTimeout(flapTimeout.current);
@@ -49,6 +51,16 @@ export default function CustomCursor() {
 
       setPosition({ x, y });
       lastMousePos.current = { x, y };
+    };
+
+    // Coalesce high-frequency mouse events into one visual update per frame.
+    const handleMouseMove = (event) => {
+      latestPointer = { clientX: event.clientX, clientY: event.clientY };
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        updatePointer(latestPointer);
+      });
     };
 
     const handleMouseOver = (e) => {
@@ -73,6 +85,7 @@ export default function CustomCursor() {
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
       clearTimeout(flapTimeout.current);
+      cancelAnimationFrame(frame);
     };
   }, [isCursorEnabled]);
 
@@ -83,7 +96,7 @@ export default function CustomCursor() {
   return (
     <div className="custom-cursor-container">
       {/* LAYER 1: Stays perfectly upright, applies the global screen shadow */}
-      <div 
+      <div
         className={`bird-cursor ${isHovering ? 'hovering' : ''}`}
         style={{
           left: `${position.x}px`,
@@ -92,16 +105,16 @@ export default function CustomCursor() {
         }}
       >
         {/* LAYER 2: Handles steering rotation independently */}
-        <div 
+        <div
           className="bird-steering-container"
           style={{ transform: `rotate(${rotation}deg)` }}
         >
           {/* LAYER 3: Renders the asset and targets the wingbeat animation */}
-          <img 
-            src="/CursorBird.png" 
-            className={isFlapping ? 'flapping' : ''} 
-            alt="Custom Bird Cursor" 
-          />
+          <img
+            src="/CursorBird-160.webp"
+            className={isFlapping ? 'flapping' : ''}
+            alt="" aria-hidden="true"
+           width="160" height="160" decoding="async" loading="lazy" />
         </div>
       </div>
     </div>

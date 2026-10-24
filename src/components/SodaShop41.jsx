@@ -71,7 +71,7 @@ export default function SodaStopConcept() {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             aria-label="The Soda Stop concept website homepage"
           >
             <source src="/sodastop/sodastophero.mp4" type="video/mp4" />
@@ -147,9 +147,9 @@ export default function SodaStopConcept() {
 
           <div className="soda-brand-logo-card">
             <img
-              src="/sodastop/SodaStopspecials.png"
+              src="/sodastop/SodaStopspecials.webp"
               alt="The Soda Stop concept specials and illustrated Smith Lake location section"
-            />
+             width="2026" height="1602" decoding="async" loading="lazy" />
           </div>
         </div>
 
@@ -200,7 +200,7 @@ export default function SodaStopConcept() {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             className="soda-menu-video"
             aria-label="The Soda Stop concept menu filtering and ordering interaction"
           >
@@ -244,9 +244,9 @@ export default function SodaStopConcept() {
               </div>
 
               <img
-                src="/sodastop/sodastopfaq.png"
+                src="/sodastop/sodastopfaq.webp"
                 alt="The Soda Stop concept FAQ and call-to-action section"
-              />
+               width="1684" height="1272" decoding="async" loading="lazy" />
             </div>
           </div>
         </div>

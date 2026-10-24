@@ -47,9 +47,9 @@ export default function SarahPickett() {
       const tags = Array.from(document.head.querySelectorAll(selector));
       tags.slice(0, -1).forEach(tag => { removed.push(tag); tag.remove(); });
     });
-    document.title = 'Sarah Pickett Website Design Case Study | 2e Studio';
+    document.title = 'Madison, Alabama Website Design: Sarah Pickett | 2e Studio';
     const values = {
-      'meta[name="description"]': 'Website design for Sarah Pickett’s voice and speech-language pathology practice in Huntsville and Madison, Alabama. A case study by 2e Studio.',
+      'meta[name="description"]': 'Website design for Sarah Pickett’s voice and speech-language pathology practice in Madison, Alabama, serving the Huntsville area. A case study by 2e Studio.',
       'link[rel="canonical"]': 'https://jessie2e.com/work/sarah-pickett/',
       'meta[property="og:title"]': socialTitle,
       'meta[property="og:description"]': socialDescription,
@@ -68,8 +68,8 @@ export default function SarahPickett() {
     return () => removed.forEach(tag => document.head.appendChild(tag));
   }, []);
   return <div className="sp-case">
-    <title>Sarah Pickett Website Design Case Study | 2e Studio</title>
-    <meta name="description" content="Website design for Sarah Pickett’s voice and speech-language pathology practice in Huntsville and Madison, Alabama. A case study by 2e Studio." />
+    <title>Madison, Alabama Website Design: Sarah Pickett | 2e Studio</title>
+    <meta name="description" content="Website design for Sarah Pickett’s voice and speech-language pathology practice in Madison, Alabama, serving the Huntsville area. A case study by 2e Studio." />
     <link rel="canonical" href="https://jessie2e.com/work/sarah-pickett/" />
     <meta property="og:title" content={socialTitle} />
     <meta property="og:description" content={socialDescription} />
@@ -88,7 +88,7 @@ export default function SarahPickett() {
     <main>
       <section className="sp-hero sp-wrap">
         <p className="sp-label">LIVE CLIENT WEBSITE · VOICE & SPEECH SERVICES</p>
-        <div className="sp-hero-grid"><h1>A <span className="sp-first-word">first</span> website.<br /><em>A confident</em><br />next chapter.</h1><div className="sp-intro"><p className="sp-client">Sarah Pickett, SLP</p><p>Clinical expertise. Artistic insight. A digital home that brings both into focus.</p><p>Sarah needed her first website to introduce her voice and speech-language pathology practice in Huntsville and Madison, Alabama, and make requesting an appointment feel simple.</p><a className="sp-button" href="https://www.sarahpickettvoice.com/" target="_blank" rel="noreferrer">Visit Sarah’s live website ↗</a></div></div>
+        <div className="sp-hero-grid"><h1>A <span className="sp-first-word">first</span> website.<br /><em>A confident</em><br />next chapter.</h1><div className="sp-intro"><p className="sp-client">Sarah Pickett, SLP</p><p>Clinical expertise. Artistic insight. A digital home that brings both into focus.</p><p>Sarah needed her first website to introduce her voice and speech-language pathology practice in Madison, Alabama, serving the Huntsville area, and make requesting an appointment feel simple.</p><a className="sp-button" href="https://www.sarahpickettvoice.com/" target="_blank" rel="noreferrer">Visit Sarah’s live website ↗</a></div></div>
         <div className="sp-facts"><div><span>CLIENT</span>Sarah Pickett Voice & Speech Services</div><div><span>ROLE</span>Website design + development</div><div><span>FOCUS</span>Discovery · Trust · Appointment requests</div></div>
       </section>
       <section className="sp-wrap sp-cover" aria-label="Website homepage"><Browser><Screenshot name="sarahpicketthero" alt="Sarah Pickett desktop homepage, pairing a portrait with voice rehabilitation and coaching in Madison and Huntsville, Alabama" eager /></Browser></section>

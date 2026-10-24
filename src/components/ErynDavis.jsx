@@ -60,7 +60,7 @@ export default function ErynDavis() {
             <img
               src="/eryn-davis/eryn-davis-cover.webp"
               alt="Eryn Davis performer website homepage"
-            />
+             width="1800" height="851" decoding="async" loading="eager" />
           </div>
         </section>
 
@@ -156,7 +156,7 @@ export default function ErynDavis() {
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="none"
               aria-label="Interactive Eryn Davis performance package selector"
             />
           </div>
@@ -172,7 +172,7 @@ export default function ErynDavis() {
                 muted
                 loop
                 playsInline
-                preload="metadata"
+                preload="none"
                 aria-label="Mobile booking and FAQ experience for the Eryn Davis website"
               />
             </div>

@@ -615,3 +615,97 @@ footer.studio-footer {
 @media(max-width:1049px){
  .work-feature-row .desktop-featured-project { display:grid!important; grid-template-columns:minmax(0,1fr); }
 }
+
+/* Selected Work: one image stage and one status vocabulary for every card. */
+#portfolio .secondary-project { display:flex;flex-direction:column; }
+#portfolio .secondary-project.portfolio-inwoods { display:flex!important; }
+#portfolio .secondary-project > .project-preview-link { display:block;flex:none;margin:0; }
+#portfolio .secondary-project-art {
+  display:block;
+  width:100%;
+  height:auto;
+  min-height:0;
+  aspect-ratio:9/4;
+  padding:0;
+  margin:0;
+  overflow:hidden;
+  background:transparent!important;
+}
+#portfolio .secondary-project-art img {
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:none;
+  max-height:none;
+  aspect-ratio:9/4;
+  object-fit:contain;
+  object-position:top;
+  border-radius:0;
+  transform:none;
+}
+#portfolio .secondary-project-copy {
+  flex:1;
+  display:grid;
+  grid-template-rows:28px 32px 64px minmax(0,1fr) 64px 44px;
+  gap:14px;
+}
+#portfolio .secondary-project-copy > * { margin:0;min-height:0; }
+#portfolio .secondary-project-copy h3 { font-size:1.65rem;line-height:1.15; }
+#portfolio .secondary-project-copy .project-meta-row { align-self:start; }
+#portfolio .secondary-project-copy .work-tags { align-content:start;align-items:start; }
+#portfolio .secondary-project-copy .work-link { align-self:end;justify-self:start; }
+@media(max-width:720px){
+ #portfolio .secondary-project-copy {
+   grid-template-rows:28px 24px 50px 42px 50px 44px;
+   gap:10px;
+ }
+ #portfolio .secondary-project-copy h3 { font-size:1.35rem; }
+ #portfolio .secondary-project-copy > p { font-size:14px;line-height:1.5; }
+}
+#portfolio .project-summary-status { margin:0; }
+#portfolio :is(.project-status-badge,.featured-project-status) {
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:7px 11px;
+  margin:0;
+  border:1px solid;
+  border-radius:99px;
+  font-size:10px;
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  box-shadow:none;
+}
+#portfolio .secondary-project-art .project-status-badge {
+  position:static;
+  justify-self:start;
+}
+#portfolio .project-status-live {
+  background:#e5eee2;
+  border-color:#b8cbb2;
+  color:#2d4c2d;
+}
+#portfolio .project-status-concept {
+  background:#f0e4ed;
+  border-color:#d6b9cb;
+  color:#602b47;
+}
+#portfolio .project-status-development {
+  background:#f7edcf;
+  border-color:#d7c58b;
+  color:#695019;
+}
+#portfolio .desktop-featured-project .project-browser-bar {
+  height:36px;
+}
+
+/* Local service information follows the existing editorial layout. */
+.studio-service-area{max-width:1180px;margin:0 auto;padding:44px 24px;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;border-top:1px solid #602b471c;color:#602b47}
+.studio-area-kicker{font-size:11px;font-weight:700;letter-spacing:.12em;color:#768c70;margin:0 0 14px}
+.studio-service-area h2{font-size:clamp(25px,3vw,38px);line-height:1.12;letter-spacing:-.035em;margin:0}
+.studio-service-area p:not(.studio-area-kicker){color:#625850;font-size:15px;line-height:1.65;margin:0 0 12px}
+.studio-service-area a{color:#602b47;text-underline-offset:3px}
+.studio-area-cta{display:inline-flex;align-items:center;min-height:44px;font-weight:700;font-size:14px}
+@media(max-width:720px){.studio-service-area{grid-template-columns:1fr;gap:18px;padding:28px 24px}.studio-service-area h2 br{display:none}.studio-service-area p:not(.studio-area-kicker){font-size:14px}}

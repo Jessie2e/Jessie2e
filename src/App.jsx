@@ -1,6 +1,5 @@
 import StudioFooter from './components/StudioFooter';
 import { useEffect, useState } from 'react';
-import CustomCursor from './components/CustomCursor';
 import { PROJECT_TIERS, CARE_PLANS } from './packages';
 import ProjectInquiry from './components/ProjectInquiry';
 export default function App() {
@@ -239,14 +238,13 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
 
       <div className="scroll-progress" aria-hidden="true" />
-      <CustomCursor />
 
-      <img
-        src="/about/bird-flying.png"
+      {isBirdFlying && <img
+        src="/about/bird-flying.webp"
         className={`easter-egg-bird ${isBirdFlying ? 'fly-across' : ''}`}
         alt=""
         aria-hidden="true"
-      />
+       width="1254" height="1254" decoding="async" loading="eager"  />}
 
       {/* Navigation */}
       <nav className="navbar">
@@ -268,7 +266,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       src="/2elogo.svg"
       className="nav-logo"
       alt="2e Studio bird logo"
-    />
+     />
     <span>2e Studio</span>
   </div>
 
@@ -290,7 +288,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         <summary>Work <span aria-hidden="true">⌄</span></summary>
         <div className="nav-work-projects">
           <a href="#portfolio" onClick={e => {setIsNavOpen(false);e.currentTarget.closest('details').open=false;}}>All selected work ↗</a>
-          {[['sarah-pickett','Sarah Pickett'],['in-the-woods','In The Woods'],['soda-stop-concept','The Soda Stop'],['susan-ripp','Susan Ripp Art'],['eryn-davis','Eryn Davis']].map(([slug,name]) => <a key={slug} href={`/work/${slug}`} onClick={() => setIsNavOpen(false)}>{name}</a>)}
+          {[['sarah-pickett','Sarah Pickett'],['dcg-land-management','DCG Land Management'],['in-the-woods','In The Woods'],['soda-stop-concept','The Soda Stop'],['susan-ripp','Susan Ripp Art'],['eryn-davis','Eryn Davis']].map(([slug,name]) => <a key={slug} href={`/work/${slug}`} onClick={() => setIsNavOpen(false)}>{name}</a>)}
         </div>
       </details>
     </li>
@@ -313,6 +311,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 </nav>
 
   {/* Hero */}
+<main id="main-content">
 <section id="home" className="studio-hero">
   <div className="studio-hero-inner">
 
@@ -381,11 +380,11 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
   </p>
 
 
-  {/* SUSAN RIPP — BACK CARD */}
+  {/* DCG — BACK CARD */}
   <a
-  href="/work/susan-ripp"
+  href="/work/dcg-land-management/"
   className="hero-project-window hero-project-susan"
-  aria-label="View Susan Ripp Art project"
+  aria-label="View DCG Land Management case study"
 >
 
   <div className="hero-window-bar">
@@ -401,10 +400,9 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
   <div className="hero-susan-real-preview">
 
     <img
-      src="/susan-ripp/hero.png"
-      alt=""
-      aria-hidden="true"
-    />
+      src="/portfolio/dcg-nav-hero.webp"
+      alt="DCG Land Management website homepage"
+     width="1800" height="800" decoding="async" loading="eager" srcSet="/portfolio/dcg-nav-hero-480.webp 480w, /portfolio/dcg-nav-hero-900.webp 900w, /portfolio/dcg-nav-hero.webp 1800w" sizes="(max-width: 720px) 280px, 360px"  />
 
   </div>
 
@@ -431,10 +429,10 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
   <div className="hero-soda-real-preview">
 
     <img
-      src="/sodastop/sodastop-cover.png"
+      src="/sodastop/sodastop-cover.webp"
       alt=""
       aria-hidden="true"
-    />
+     width="3336" height="1728" decoding="async" loading="lazy"  srcSet="/sodastop/sodastop-cover-900.webp 900w, /sodastop/sodastop-cover.webp 3336w" sizes="360px" />
 
   </div>
 
@@ -464,9 +462,9 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
     <div className="hero-main-screen">
       <img
-        src="/sarahpickettvoice/web/sarahpicketthero.webp"
+        src="/portfolio/sarah-pickett-nav-hero.webp"
         alt="Sarah Pickett Voice & Speech Services website"
-      />
+       width="1800" height="800" decoding="async" loading="eager" srcSet="/portfolio/sarah-pickett-nav-hero-480.webp 480w, /portfolio/sarah-pickett-nav-hero-900.webp 900w, /portfolio/sarah-pickett-nav-hero.webp 1800w" sizes="(max-width: 720px) 280px, 360px"  fetchPriority="high" />
     </div>
 
   </a>
@@ -499,7 +497,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
     <div className="work-feature-row">
 
     <div className="work-heading">
-      <p className="work-kicker">Selected Work · 01—05</p>
+      <p className="work-kicker">Selected Work · 01—06</p>
 
       <h2>
         Built around the business.
@@ -657,22 +655,20 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
           <div className="project-browser-screen">
             <img
-              src="/sarahpickettvoice/web/sarahpicketthero.webp"
+              src="/portfolio/sarah-pickett-nav-hero.webp"
               alt="Sarah Pickett Voice & Speech Services website"
-            />
+             width="1800" height="800" decoding="async" loading="lazy" srcSet="/portfolio/sarah-pickett-nav-hero-480.webp 480w, /portfolio/sarah-pickett-nav-hero-900.webp 900w, /portfolio/sarah-pickett-nav-hero.webp 1800w" sizes="(max-width: 720px) 82vw, (max-width: 1024px) 44vw, 420px"  />
           </div>
 
         </div>
-        <div className="featured-project-status">
-  Live Site
-</div>
+        <div className="featured-project-status project-status-live">Live Website</div>
       </a>
 
 
       <div className="featured-project-copy">
         <p>
           A first website for a voice and speech-language pathology practice
-          in Huntsville and Madison, Alabama—designed to build trust,
+          in Madison, Alabama, serving the Huntsville area—designed to build trust,
           explain services, and make appointment requests simple.
         </p>
 
@@ -704,23 +700,37 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       event.preventDefault();
       event.currentTarget.scrollBy({ left: event.currentTarget.clientWidth * (event.key === 'ArrowRight' ? .8 : -.8), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     }}>
+      <article className="secondary-project portfolio-dcg">
+        <a className="project-preview-link" href="/work/dcg-land-management/" aria-label="View DCG Land Management case study"><div className="secondary-project-art project-preview-visual dcg-project-visual">
+
+          <img src="/portfolio/dcg-nav-hero.webp" alt="DCG’s live website featuring real excavating equipment, bold service messaging, and an estimate request button" width="1800" height="800" loading="lazy"  decoding="async" srcSet="/portfolio/dcg-nav-hero-480.webp 480w, /portfolio/dcg-nav-hero-900.webp 900w, /portfolio/dcg-nav-hero.webp 1800w" sizes="(max-width: 720px) 82vw, (max-width: 1024px) 44vw, 380px"  />
+        </div></a>
+        <div className="secondary-project-copy">
+          <div className="project-summary-status"><div className="project-status-badge project-status-live">Live Website</div></div>
+          <div className="project-meta-row"><span className="project-number">02</span><span className="project-type">Website Design + Development</span></div>
+          <h3>DCG Land Management LLC</h3>
+          <p>A custom website for an Alabama land-management business—built to showcase real projects, explain services clearly, and make requesting an estimate simple.</p>
+          <div className="work-tags"><span>Client Project</span><span>Responsive Design</span><span>Estimate Inquiries</span></div>
+          <a href="/work/dcg-land-management/" className="work-link">View Case Study <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
       {/* IN THE WOODS — MOBILE FIRST CARD */}
       <article className="secondary-project portfolio-inwoods">
 
         <a className="project-preview-link" href="/work/in-the-woods" aria-label="View In The Woods Dog Training case study"><div className="secondary-project-art project-preview-visual">
-          <div className="project-status-badge">
-            Live Site
-          </div>
+
 
           <img
-            src="/inthewoods/cover.png"
+            src="/portfolio/in-the-woods-nav-hero.webp"
             alt="In The Woods Dog Training website"
-          />
+           width="1800" height="800" decoding="async" loading="lazy" srcSet="/portfolio/in-the-woods-nav-hero-480.webp 480w, /portfolio/in-the-woods-nav-hero-900.webp 900w, /portfolio/in-the-woods-nav-hero.webp 1800w" sizes="(max-width: 720px) 82vw, (max-width: 1024px) 44vw, 380px"  />
         </div></a>
 
         <div className="secondary-project-copy">
+          <div className="project-summary-status"><div className="project-status-badge project-status-live">Live Website</div></div>
           <div className="project-meta-row">
-            <span className="project-number">02</span>
+            <span className="project-number">03</span>
 
             <span className="project-type">
               Website Design + Development
@@ -730,7 +740,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
           <h3>In The Woods Dog Training</h3>
 
           <p>
-            A warm, approachable website for an Alabama dog-training
+            A warm, approachable website for a Cullman, Alabama dog-training
             business—designed to explain services clearly, earn trust
             quickly, and make getting started feel simple.
           </p>
@@ -758,21 +768,20 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
         <a className="project-preview-link" href="/work/soda-stop-concept" aria-label="View The Soda Stop case study"><div className="secondary-project-art soda-project-visual">
 
-  <div className="project-status-badge">
-    Concept Project
-  </div>
+
 
   <img
-    src="/sodastop/sodastop-cover.png"
+    src="/portfolio/soda-stop-nav-hero.webp"
     alt="The Soda Stop concept website homepage"
-  />
+   width="1800" height="800" decoding="async" loading="lazy" srcSet="/portfolio/soda-stop-nav-hero-480.webp 480w, /portfolio/soda-stop-nav-hero-900.webp 900w, /portfolio/soda-stop-nav-hero.webp 1800w" sizes="(max-width: 720px) 82vw, (max-width: 1024px) 44vw, 380px"  />
 
 </div></a>
 
         <div className="secondary-project-copy">
+          <div className="project-summary-status"><div className="project-status-badge project-status-concept">Concept Project</div></div>
 
           <div className="project-meta-row">
-            <span className="project-number">03</span>
+            <span className="project-number">04</span>
 
             <span className="project-type">
               Concept Soda Shop Design
@@ -811,21 +820,20 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
   <a className="project-preview-link" href="/work/susan-ripp" aria-label="View Susan Ripp Art case study"><div className="secondary-project-art susan-project-visual">
 
-  <div className="project-status-badge">
-    In Development
-  </div>
+
 
   <img
-    src="/susan-ripp/hero.png"
+    src="/portfolio/susan-ripp-nav-hero.webp"
     alt="Susan Ripp Art website featuring original paintings, prints, and watercolor workshops"
-  />
+   width="1800" height="800" decoding="async" loading="lazy" srcSet="/portfolio/susan-ripp-nav-hero-480.webp 480w, /portfolio/susan-ripp-nav-hero-900.webp 900w, /portfolio/susan-ripp-nav-hero.webp 1800w" sizes="(max-width: 720px) 82vw, (max-width: 1024px) 44vw, 380px"  />
 
 </div></a>
 
   <div className="secondary-project-copy">
+          <div className="project-summary-status"><div className="project-status-badge project-status-development">In Development</div></div>
 
     <div className="project-meta-row">
-      <span className="project-number">04</span>
+      <span className="project-number">05</span>
 
       <span className="project-type">
         Artist Portfolio + Website
@@ -863,19 +871,18 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       <article className="secondary-project">
 
         <a className="project-preview-link" href="/work/eryn-davis" aria-label="View Eryn Davis case study"><div className="secondary-project-art eryn-project-visual">
-          <div className="project-status-badge">
-            In Development
-          </div>
+
 
           <img
-            src="/eryn-davis/eryn-davis-cover.webp"
+            src="/portfolio/eryn-davis-nav-hero.webp"
             alt="Eryn Davis live entertainer website homepage"
-          />
+           width="1800" height="800" decoding="async" loading="lazy" srcSet="/portfolio/eryn-davis-nav-hero-480.webp 480w, /portfolio/eryn-davis-nav-hero-900.webp 900w, /portfolio/eryn-davis-nav-hero.webp 1800w" sizes="(max-width: 720px) 82vw, (max-width: 1024px) 44vw, 380px"  />
         </div></a>
 
         <div className="secondary-project-copy">
+          <div className="project-summary-status"><div className="project-status-badge project-status-development">In Development</div></div>
           <div className="project-meta-row">
-            <span className="project-number">05</span>
+            <span className="project-number">06</span>
 
             <span className="project-type">
               Performer Website + Booking UX
@@ -1047,17 +1054,17 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
         <div className="about-character-stage">
           <img
-            src="/about/jessie-portrait.png"
+            src="/about/jessie-portrait.webp"
             className="about-jessie-image"
             alt="Illustrated portrait of Jessie Towey"
-          />
+           width="1254" height="1254" decoding="async" loading="lazy"  />
 
           <div className="about-bird-flight" aria-hidden="true">
             <img
-              src="/about/bird-flying.png"
+              src="/about/bird-flying.webp"
               className="about-bird-flying"
               alt=""
-            />
+             width="1254" height="1254" decoding="async" loading="lazy"  />
           </div>
         </div>
 
@@ -1133,6 +1140,12 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
 </section>
 
+<section className="studio-service-area" aria-labelledby="alabama-web-design">
+  <div><p className="studio-area-kicker">ROOTED IN ALABAMA · WORKING ANYWHERE</p><h2 id="alabama-web-design">Custom website design<br />for Alabama businesses.</h2></div>
+  <div><p>Based near Smith Lake, 2e Studio designs and develops websites for small businesses in Arley, Houston, Huntsville, Madison, Cullman, Birmingham, Tuscaloosa, and across Alabama. Working farther away? We can collaborate remotely, too.</p>
+  <p>Explore a <a href="/work/sarah-pickett/">Madison voice and speech practice</a>, a <a href="/work/in-the-woods/">Cullman dog-training business</a>, and an <a href="/work/dcg-land-management/">Oakman land-management company serving Central and West Alabama</a>.</p><a className="studio-area-cta" href="#project-form">Let’s talk about your website ↗</a></div>
+</section>
+
 {/* Build Your Site / Project Intake */}
 <section id="contact" className="contact-editorial builder-section">
 
@@ -1195,8 +1208,8 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
             </div>
           ))}
         </div>
-        
-        
+
+
         <a className="care-learn-more" href="/website-care"><span><strong>Website care, ownership & handoff</strong><small>See what’s included, how updates work, and what you own.</small></span><span aria-hidden="true">↗</span></a>
       </div>
 
@@ -1210,6 +1223,8 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 <div className="contact-tail"><a href="mailto:jessietowey@gmail.com">Prefer email? <span>jessietowey@gmail.com</span> ↗</a><p>Based near Smith Lake in Alabama · Working with businesses anywhere.</p></div>
 
 </section>
+
+</main>
 
       {/* Footer */}
       <StudioFooter />

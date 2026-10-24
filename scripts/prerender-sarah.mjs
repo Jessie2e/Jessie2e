@@ -9,6 +9,7 @@ try {
   await writeFile('dist/index.html', template.replace('<div id="root"></div>', `<div id="root">${renderToString(createElement(Home))}</div>`));
   for (const [module, path, className] of [
     ['SarahPickett', 'work/sarah-pickett', 'sp-case'],
+    ['DCGLandManagement', 'work/dcg-land-management', 'sp-case dcg-case'],
     ['WebsiteCare', 'website-care', 'care-guide-page'],
     ['Resources', 'resources', 'resources-page'],
     ['InTheWoods', 'work/in-the-woods', 'case-study'],
@@ -34,4 +35,14 @@ try {
   for (const name of await readdir('dist/sarahpickettvoice')) {
     if (/\.(png|mov)$/i.test(name) && name !== '2eStudio-SarahPickettFB.png') await unlink(`dist/sarahpickettvoice/${name}`);
   }
+  const imageReport = JSON.parse(await readFile('performance-image-report.json', 'utf8'));
+  for (const { source } of imageReport) await unlink(`dist${source}`).catch(error => { if (error.code !== 'ENOENT') throw error; });
+  async function removeRawRecordings(directory) {
+    for (const entry of await readdir(directory, { withFileTypes: true })) {
+      const path = `${directory}/${entry.name}`;
+      if (entry.isDirectory()) await removeRawRecordings(path);
+      else if (entry.name.endsWith('.mov')) await unlink(path);
+    }
+  }
+  await removeRawRecordings('dist');
 } finally { await server.close(); }

@@ -1,0 +1,80 @@
+[
+  {
+    "source": "/CursorBird.png",
+    "before": 1206994,
+    "after": 72152,
+    "lossless": true
+  },
+  {
+    "source": "/about/bird-flying.png",
+    "before": 570991,
+    "after": 356406,
+    "lossless": true
+  },
+  {
+    "source": "/about/jessie-portrait.png",
+    "before": 1102315,
+    "after": 700472,
+    "lossless": true
+  },
+  {
+    "source": "/inthewoods/about.png",
+    "before": 2452639,
+    "after": 1242900,
+    "lossless": true
+  },
+  {
+    "source": "/inthewoods/contact.png",
+    "before": 482067,
+    "after": 114330,
+    "lossless": true
+  },
+  {
+    "source": "/inthewoods/cover.png",
+    "before": 5105269,
+    "after": 2386790,
+    "lossless": true
+  },
+  {
+    "source": "/inthewoods/inthewoodslogo.png",
+    "before": 187162,
+    "after": 42846,
+    "lossless": true
+  },
+  {
+    "source": "/sodastop/SodaStopspecials.png",
+    "before": 529379,
+    "after": 189272,
+    "lossless": true
+  },
+  {
+    "source": "/sodastop/sodastop-cover.png",
+    "before": 1719326,
+    "after": 926288,
+    "lossless": true
+  },
+  {
+    "source": "/sodastop/sodastopfaq.png",
+    "before": 208027,
+    "after": 40520,
+    "lossless": true
+  },
+  {
+    "source": "/susan-ripp/community.png",
+    "before": 2346888,
+    "after": 1034544,
+    "lossless": true
+  },
+  {
+    "source": "/susan-ripp/courses.png",
+    "before": 4816450,
+    "after": 1864986,
+    "lossless": true
+  },
+  {
+    "source": "/susan-ripp/hero.png",
+    "before": 2246286,
+    "after": 1176820,
+    "lossless": true
+  }
+]
