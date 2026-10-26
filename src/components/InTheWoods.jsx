@@ -4,7 +4,7 @@ import StudioFooter from './StudioFooter';
 export default function InTheWoods() {
   return (
     <div className="case-study">
-      <PageMetadata title="Cullman Dog Training Website Design | 2e Studio" description="Custom website design and visual identity for In The Woods Dog Training in Cullman, Alabama. See how 2e Studio presents services and simplifies inquiries." path="/work/in-the-woods/" />
+      <PageMetadata title="In The Woods Dog Training Website | Cullman, AL | 2e Studio" description="A live website project for In The Woods Dog Training in Cullman, Alabama, by 2e Studio: custom branding, services and pricing, and an appointment request form." path="/work/in-the-woods/" />
 
       {/* TOP NAV */}
       <header className="case-study-nav">
@@ -24,7 +24,7 @@ export default function InTheWoods() {
         <div className="case-study-hero-inner">
 
           <p className="case-study-eyebrow">
-            WEBSITE + VISUAL IDENTITY
+            LIVE CLIENT WEBSITE + VISUAL IDENTITY
           </p>
 
           <h1>
@@ -34,9 +34,9 @@ export default function InTheWoods() {
           </h1>
 
           <p className="case-study-lead">
-            A warm, personality-driven website for a Cullman, Alabama dog-training
-            business, designed to build trust, clearly explain services,
-            and make getting started feel simple.
+            A custom website and visual identity I built for In The Woods Dog
+            Training in Cullman, Alabama, bringing the trainer, services, and
+            appointment requests together in one welcoming place.
           </p>
 
           <div className="case-study-tags">
@@ -107,16 +107,18 @@ export default function InTheWoods() {
           <div className="case-study-body-copy">
 
             <p>
-              Choosing a dog trainer is a trust-based decision. Potential
-              clients need more than a list of services—they want to understand
-              who they are trusting with their dog, what the trainer believes,
-              and what working together will actually feel like.
+              The website needed to introduce trainer Tessa Poulin, explain
+              training and boarding options, and give dog owners a clear way
+              to request an appointment. The business serves Cullman,
+              Huntsville, Birmingham, and surrounding Alabama communities.
             </p>
 
             <p>
-              The website was designed to answer those questions naturally,
-              combining clear information with a warm visual identity and
-              straightforward paths to contact.
+              I designed and built a custom website with a custom logo,
+              service and pricing sections for board-and-train programs,
+              structured boarding, consultations, and in-home support.
+              A trainer profile, dog photo gallery, and appointment request
+              form give visitors practical information before they reach out.
             </p>
 
           </div>
@@ -147,7 +149,7 @@ export default function InTheWoods() {
           </h2>
 
           <p>
-            The site gives visitors a chance to understand Tessa&apos;s
+            The site gives visitors a chance to understand Tessa Poulin&apos;s
             personality, experience, and approach before they&apos;re ever
             asked to reach out. That human connection is especially important
             for a service built around relationships between people and their dogs.
@@ -266,9 +268,10 @@ export default function InTheWoods() {
           </h2>
 
           <p>
-            Calls to action throughout the site lead visitors toward a focused
-            inquiry experience, making it easier to move from learning about
-            the business to starting a conversation.
+            Service links and evaluation calls to action lead to an appointment
+            request form. Dog owners can choose a training or boarding service,
+            share their dog&apos;s name, breed, and needs, and provide contact
+            details so Tessa can follow up.
           </p>
 
         </div>

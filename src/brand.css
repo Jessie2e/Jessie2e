@@ -748,3 +748,6 @@ footer.studio-footer {
   .woods-project-palette ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
   .woods-project-palette { padding-top: 24px; }
 }
+
+/* Keep the case-study credit visible in the compact phone footer. */
+.case-study .studio-footer-brand .studio-footer-credit { display: block; }
