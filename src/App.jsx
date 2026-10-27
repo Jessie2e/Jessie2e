@@ -306,7 +306,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         </div>
       </details>
     </li>
-    <li><a href="/resources" onClick={() => setIsNavOpen(false)}>Resources</a></li>
+    <li><a href="/resources/" onClick={() => setIsNavOpen(false)}>Resources</a></li>
     <li>
       <a href="#about" onClick={() => setIsNavOpen(false)}>
         About
@@ -425,7 +425,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
   {/* THE SODA STOP — CONCEPT CARD */}
   <a
-  href="/work/soda-stop-concept"
+  href="/work/soda-stop-concept/"
   className="hero-project-window hero-project-soda"
   aria-label="View The Soda Stop concept design"
 >
@@ -455,7 +455,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 
   {/* IN THE WOODS — MAIN CARD */}
   <a
-    href="/work/sarah-pickett"
+    href="/work/sarah-pickett/"
     className="hero-project-window hero-project-main"
     aria-label="View Sarah Pickett Voice & Speech Services case study"
   >
@@ -654,7 +654,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       </header>
 
 
-      <a className="featured-project-visual featured-project-preview-link" href="/work/sarah-pickett" aria-label="View Sarah Pickett Voice & Speech Services case study">
+      <a className="featured-project-visual featured-project-preview-link" href="/work/sarah-pickett/" aria-label="View Sarah Pickett Voice & Speech Services case study">
         <div className="project-browser">
 
           <div className="project-browser-bar">
@@ -693,7 +693,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         </div>
 
         <a
-          href="/work/sarah-pickett"
+          href="/work/sarah-pickett/"
           className="work-link"
         >
           View Case Study
@@ -732,7 +732,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       {/* IN THE WOODS — MOBILE FIRST CARD */}
       <article className="secondary-project portfolio-inwoods">
 
-        <a className="project-preview-link" href="/work/in-the-woods" aria-label="View In The Woods Dog Training case study"><div className="secondary-project-art project-preview-visual">
+        <a className="project-preview-link" href="/work/in-the-woods/" aria-label="View In The Woods Dog Training case study"><div className="secondary-project-art project-preview-visual">
 
 
           <img
@@ -766,7 +766,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
           </div>
 
           <a
-            href="/work/in-the-woods"
+            href="/work/in-the-woods/"
             className="work-link"
           >
             View Case Study
@@ -780,7 +780,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       {/* THE SODA STOP — CONCEPT PROJECT */}
       <article className="secondary-project">
 
-        <a className="project-preview-link" href="/work/soda-stop-concept" aria-label="View The Soda Stop case study"><div className="secondary-project-art soda-project-visual">
+        <a className="project-preview-link" href="/work/soda-stop-concept/" aria-label="View The Soda Stop case study"><div className="secondary-project-art soda-project-visual">
 
 
 
@@ -817,7 +817,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
           </div>
 
           <a
-  href="/work/soda-stop-concept"
+  href="/work/soda-stop-concept/"
   className="work-link"
 >
   View Concept
@@ -832,7 +832,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
   {/* SUSAN RIPP ART */}
 <article className="secondary-project">
 
-  <a className="project-preview-link" href="/work/susan-ripp" aria-label="View Susan Ripp Art case study"><div className="secondary-project-art susan-project-visual">
+  <a className="project-preview-link" href="/work/susan-ripp/" aria-label="View Susan Ripp Art case study"><div className="secondary-project-art susan-project-visual">
 
 
 
@@ -869,7 +869,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
     </div>
 
     <a
-  href="/work/susan-ripp"
+  href="/work/susan-ripp/"
   className="work-link"
 >
   View Case Study
@@ -884,7 +884,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       {/* ERYN DAVIS */}
       <article className="secondary-project">
 
-        <a className="project-preview-link" href="/work/eryn-davis" aria-label="View Eryn Davis case study"><div className="secondary-project-art eryn-project-visual">
+        <a className="project-preview-link" href="/work/eryn-davis/" aria-label="View Eryn Davis case study"><div className="secondary-project-art eryn-project-visual">
 
 
           <img
@@ -918,7 +918,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
           </div>
 
           <a
-            href="/work/eryn-davis"
+            href="/work/eryn-davis/"
             className="work-link"
           >
             View Case Study
@@ -1224,7 +1224,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         </div>
 
 
-        <a className="care-learn-more" href="/website-care"><span><strong>Website care, ownership & handoff</strong><small>See what’s included, how updates work, and what you own.</small></span><span aria-hidden="true">↗</span></a>
+        <a className="care-learn-more" href="/website-care/"><span><strong>Website care, ownership & handoff</strong><small>See what’s included, how updates work, and what you own.</small></span><span aria-hidden="true">↗</span></a>
       </div>
 
     </div>
