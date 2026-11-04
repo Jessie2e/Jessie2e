@@ -9,6 +9,7 @@ try {
   await writeFile('dist/index.html', template.replace('<div id="root"></div>', `<div id="root">${renderToString(createElement(Home))}</div>`));
   for (const [module, path, className] of [
     ['SarahPickett', 'work/sarah-pickett', 'sp-case'],
+    ['SudsScissors', 'work/suds-scissors', 'sp-case suds-case'],
     ['DCGLandManagement', 'work/dcg-land-management', 'sp-case dcg-case'],
     ['WebsiteCare', 'website-care', 'care-guide-page'],
     ['Resources', 'resources', 'resources-page'],

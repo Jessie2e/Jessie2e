@@ -302,7 +302,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         <summary>Work <span aria-hidden="true">⌄</span></summary>
         <div className="nav-work-projects">
           <a href="#portfolio" onClick={e => {setIsNavOpen(false);e.currentTarget.closest('details').open=false;}}>All selected work ↗</a>
-          {[['sarah-pickett','Sarah Pickett'],['dcg-land-management','DCG Land Management'],['in-the-woods','In The Woods'],['soda-stop-concept','The Soda Stop'],['susan-ripp','Susan Ripp Art'],['eryn-davis','Eryn Davis']].map(([slug,name]) => <a key={slug} href={`/work/${slug}/`}>{name}</a>)}
+          {[['sarah-pickett','Sarah Pickett'],['suds-scissors','Suds ’n Scissors'],['dcg-land-management','DCG Land Management'],['in-the-woods','In The Woods'],['soda-stop-concept','The Soda Stop'],['susan-ripp','Susan Ripp Art'],['eryn-davis','Eryn Davis']].map(([slug,name]) => <a key={slug} href={`/work/${slug}/`}>{name}</a>)}
         </div>
       </details>
     </li>
@@ -511,7 +511,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
     <div className="work-feature-row">
 
     <div className="work-heading">
-      <p className="work-kicker">Selected Work · 01—06</p>
+      <p className="work-kicker">Selected Work · 01—07</p>
 
       <h2>
         Built around the business.
@@ -714,14 +714,29 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
       event.preventDefault();
       event.currentTarget.scrollBy({ left: event.currentTarget.clientWidth * (event.key === 'ArrowRight' ? .8 : -.8), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     }}>
-      <article className="secondary-project portfolio-dcg">
+      <article className="secondary-project portfolio-suds">
+        <a className="project-preview-link" href="/work/suds-scissors/" aria-label="View Suds ’n Scissors case study"><div className="secondary-project-art project-preview-visual suds-project-visual">
+
+          <img src="/portfolio/suds-nav-hero.webp" alt="Suds ’n Scissors complete homepage, including navigation, headline, dog photograph, and booking buttons" width="1800" height="800" loading="lazy"  decoding="async" srcSet="/portfolio/suds-nav-hero-480.webp 480w, /portfolio/suds-nav-hero-900.webp 900w, /portfolio/suds-nav-hero.webp 1800w" sizes="(max-width: 720px) 82vw, (max-width: 1024px) 44vw, 380px"  />
+        </div></a>
+        <div className="secondary-project-copy">
+          <div className="project-summary-status"><div className="project-status-badge project-status-live">Live Website</div></div>
+          <div className="project-meta-row"><span className="project-number">02</span><span className="project-type">Website Design + Development</span></div>
+          <h3>Suds ’n Scissors</h3>
+          <p>A first website for grooming, boarding, clear pricing, and easy booking.</p>
+          <div className="work-tags"><span>Web Design</span><span>Booking UX</span></div>
+          <a href="/work/suds-scissors/" className="work-link">View Case Study <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+
+<article className="secondary-project portfolio-dcg">
         <a className="project-preview-link" href="/work/dcg-land-management/" aria-label="View DCG Land Management case study"><div className="secondary-project-art project-preview-visual dcg-project-visual">
 
           <img src="/portfolio/dcg-nav-hero.webp" alt="DCG’s live website featuring real excavating equipment, bold service messaging, and an estimate request button" width="1800" height="800" loading="lazy"  decoding="async" srcSet="/portfolio/dcg-nav-hero-480.webp 480w, /portfolio/dcg-nav-hero-900.webp 900w, /portfolio/dcg-nav-hero.webp 1800w" sizes="(max-width: 720px) 82vw, (max-width: 1024px) 44vw, 380px"  />
         </div></a>
         <div className="secondary-project-copy">
           <div className="project-summary-status"><div className="project-status-badge project-status-live">Live Website</div></div>
-          <div className="project-meta-row"><span className="project-number">02</span><span className="project-type">Website Design + Development</span></div>
+          <div className="project-meta-row"><span className="project-number">03</span><span className="project-type">Website Design + Development</span></div>
           <h3>DCG Land Management LLC</h3>
           <p>A custom website for an Alabama land-management business—built to showcase real projects, explain services clearly, and make requesting an estimate simple.</p>
           <div className="work-tags"><span>Client Project</span><span>Responsive Design</span><span>Estimate Inquiries</span></div>
@@ -744,7 +759,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         <div className="secondary-project-copy">
           <div className="project-summary-status"><div className="project-status-badge project-status-live">Live Website</div></div>
           <div className="project-meta-row">
-            <span className="project-number">03</span>
+            <span className="project-number">04</span>
 
             <span className="project-type">
               Website Design + Development
@@ -795,7 +810,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
           <div className="project-summary-status"><div className="project-status-badge project-status-concept">Concept Project</div></div>
 
           <div className="project-meta-row">
-            <span className="project-number">04</span>
+            <span className="project-number">05</span>
 
             <span className="project-type">
               Concept Soda Shop Design
@@ -847,7 +862,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
           <div className="project-summary-status"><div className="project-status-badge project-status-development">In Development</div></div>
 
     <div className="project-meta-row">
-      <span className="project-number">05</span>
+      <span className="project-number">06</span>
 
       <span className="project-type">
         Artist Portfolio + Website
@@ -896,7 +911,7 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
         <div className="secondary-project-copy">
           <div className="project-summary-status"><div className="project-status-badge project-status-development">In Development</div></div>
           <div className="project-meta-row">
-            <span className="project-number">06</span>
+            <span className="project-number">07</span>
 
             <span className="project-type">
               Performer Website + Booking UX
