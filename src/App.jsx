@@ -1172,7 +1172,8 @@ const endX = -(window.innerWidth * 0.8 + experience.offsetWidth);      const x =
 <section className="studio-service-area" aria-labelledby="alabama-web-design">
   <div><p className="studio-area-kicker">ROOTED IN ALABAMA · WORKING ANYWHERE</p><h2 id="alabama-web-design">Custom website design<br />for Alabama businesses.</h2></div>
   <div><p>Based near Smith Lake, 2e Studio designs and develops websites for small businesses in Arley, Houston, Huntsville, Madison, Cullman, Birmingham, Tuscaloosa, and across Alabama. Working farther away? We can collaborate remotely, too.</p>
-  <p>Explore a <a href="/work/sarah-pickett/">Madison voice and speech practice</a>, a <a href="/work/in-the-woods/">Cullman dog-training business</a>, and an <a href="/work/dcg-land-management/">Oakman land-management company serving Central and West Alabama</a>.</p><a className="studio-area-cta" href="#project-form">Let’s talk about your website ↗</a></div>
+  <p>Explore a <a href="/work/sarah-pickett/">Madison voice and speech practice</a>, a <a href="/work/in-the-woods/">Cullman dog-training business</a>, and an <a href="/work/dcg-land-management/">Oakman land-management company serving Central and West Alabama</a>.</p>
+  <p>See our dedicated <a href="/alabama-website-design/">Alabama website design services</a> or explore our meeting-free <a href="/no-fuss-websites/">no-fuss website build option</a>.</p><a className="studio-area-cta" href="#project-form">Let’s talk about your website ↗</a></div>
 </section>
 
 {/* Build Your Site / Project Intake */}

@@ -13,10 +13,13 @@ try {
     ['DCGLandManagement', 'work/dcg-land-management', 'sp-case dcg-case'],
     ['WebsiteCare', 'website-care', 'care-guide-page'],
     ['Resources', 'resources', 'resources-page'],
+    ['AIDiscoveryGuide', 'resources/ai-discovery-guide', 'ai-discovery-guide'],
     ['InTheWoods', 'work/in-the-woods', 'case-study'],
     ['SodaShop41', 'work/soda-stop-concept', 'soda-case'],
     ['SusanRipp', 'work/susan-ripp', 'susan-case'],
     ['ErynDavis', 'work/eryn-davis', 'eryn-case'],
+    ['AlabamaWebsiteDesign', 'alabama-website-design', 'alabama-landing-page'],
+    ['NoFussWebsites', 'no-fuss-websites', 'no-fuss-landing-page'],
   ]) {
     const { default: Page } = await server.ssrLoadModule(`/src/components/${module}.jsx`);
     const rendered = renderToString(createElement(Page));

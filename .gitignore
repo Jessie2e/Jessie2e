@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw screen recordings and unreferenced source captures
+*.mov
+public/sarahpickettvoice/*.png
+!public/sarahpickettvoice/2eStudio-SarahPickettFB.png
+public/susan-ripp/*before.png
+

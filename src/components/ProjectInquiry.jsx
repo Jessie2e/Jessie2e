@@ -1,9 +1,28 @@
 import { useState } from 'react';
 
-const INITIAL = { name: '', businessName: '', preferredContact: 'Email', email: '', phone: '', message: '', currentSite: '', timeline: '', budget: '', foundUs: '' };
-
-export default function ProjectInquiry() {
-  const [values, setValues] = useState(INITIAL);
+export default function ProjectInquiry({
+  inquiryType = 'Project Inquiry',
+  source = 'Homepage',
+  title = 'Tell me what you’re building.',
+  eyebrow = 'Start with a conversation',
+  intro = 'A few basics are enough. I’ll help you choose what your website needs and send a quote before you commit.',
+  defaultPreferredContact = 'Email',
+  id = 'project-form',
+  messagePlaceholder = 'Tell me about your business and what you want people to do on your site. If you already use Shopify or a booking tool, mention it here.',
+  submitLabel = 'Send my project note'
+} = {}) {
+  const [values, setValues] = useState(() => ({
+    name: '',
+    businessName: '',
+    preferredContact: defaultPreferredContact,
+    email: '',
+    phone: '',
+    message: '',
+    currentSite: '',
+    timeline: '',
+    budget: '',
+    foundUs: ''
+  }));
   const [status, setStatus] = useState('idle');
   const change = ({ target }) => setValues(previous => ({ ...previous, [target.name]: target.value }));
   const submit = async event => {
@@ -14,7 +33,7 @@ export default function ProjectInquiry() {
       const response = await fetch('https://formspree.io/f/xdeozrrz', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ inquiryType: 'Project Inquiry', ...values }),
+        body: JSON.stringify({ source, inquiryType, ...values }),
       });
       if (!response.ok) throw new Error('Message not sent');
       setStatus('sent');
@@ -29,7 +48,7 @@ export default function ProjectInquiry() {
     </div>
   );
   return (
-    <div className="contact-form-card inquiry-card" id="project-form">
+    <div className="contact-form-card inquiry-card" id={id}>
       {status === 'sent' ? (
         <div className="builder-success" role="status">
           <span className="builder-success-mark" aria-hidden="true">✓</span>
@@ -38,10 +57,12 @@ export default function ProjectInquiry() {
         </div>
       ) : (
         <div className="quick-inquiry-panel">
-          <p className="builder-eyebrow">Start with a conversation</p>
-          <h3>Tell me what you’re building.</h3>
-          <p className="builder-step-intro">A few basics are enough. I’ll help you choose what your website needs and send a quote before you commit.</p>
+          <p className="builder-eyebrow">{eyebrow}</p>
+          <h3>{title}</h3>
+          <p className="builder-step-intro">{intro}</p>
           <form className="contact-form contact-form-editorial quick-inquiry-form" onSubmit={submit}>
+            <input type="hidden" name="source" value={source} />
+            <input type="hidden" name="inquiryType" value={inquiryType} />
             {field('name', 'Your name', 'text', true)}
             {field('businessName', 'Business or project name')}
             {field('foundUs', 'How did you find 2e Studio?', 'text', false, 'Google, ChatGPT, another AI tool, Instagram…')}
@@ -55,7 +76,7 @@ export default function ProjectInquiry() {
             {values.preferredContact !== 'Email' && field('phone', 'Phone number', 'tel', true)}
             <div className="form-group quick-span-2">
               <label htmlFor="inquiry-message">What would you like help with?</label>
-              <textarea id="inquiry-message" name="message" className="form-control" value={values.message} onChange={change} required rows={4} placeholder="Tell me about your business and what you want people to do on your site. If you already use Shopify or a booking tool, mention it here." />
+              <textarea id="inquiry-message" name="message" className="form-control" value={values.message} onChange={change} required rows={4} placeholder={messagePlaceholder} />
             </div>
             <details className="inquiry-extras quick-span-2">
               <summary>A few extra details, if you know them</summary>
@@ -66,7 +87,7 @@ export default function ProjectInquiry() {
               </div>
             </details>
             {status === 'error' && <p className="inquiry-error quick-span-2" role="alert">Your message didn’t send. Try again, or email <a href="mailto:jessietowey@gmail.com">jessietowey@gmail.com</a>.</p>}
-            <button type="submit" className="contact-submit quick-span-2" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : 'Send my project note'}<span aria-hidden="true">→</span></button>
+            <button type="submit" className="contact-submit quick-span-2" disabled={status === 'sending'}>{status === 'sending' ? 'Sending…' : submitLabel}<span aria-hidden="true">→</span></button>
             <p className="inquiry-note quick-span-2">This is an inquiry, not a booking or payment. Your final scope and price will be agreed together.</p>
           </form>
         </div>

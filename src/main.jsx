@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import App from './App.jsx'
 import Resources from './components/Resources.jsx'
+import AIDiscoveryGuide from './components/AIDiscoveryGuide.jsx'
 import WebsiteCare from './components/WebsiteCare.jsx'
 import InTheWoods from './components/InTheWoods.jsx'
 import SusanRipp from './components/SusanRipp.jsx'
@@ -12,6 +13,8 @@ import ErynDavis from './components/ErynDavis.jsx'
 import SarahPickett from './components/SarahPickett.jsx'
 import SudsScissors from './components/SudsScissors.jsx'
 import DCGLandManagement from './components/DCGLandManagement.jsx'
+import AlabamaWebsiteDesign from './components/AlabamaWebsiteDesign.jsx'
+import NoFussWebsites from './components/NoFussWebsites.jsx'
 import CustomCursor from './components/CustomCursor.jsx'
 import './index.css'
 import './brand.css'
@@ -23,7 +26,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <CustomCursor />
 
       <Routes>
+        <Route path="/alabama-website-design" element={<AlabamaWebsiteDesign />} />
+        <Route path="/alabama-website-design/" element={<AlabamaWebsiteDesign />} />
+        <Route path="/no-fuss-websites" element={<NoFussWebsites />} />
+        <Route path="/no-fuss-websites/" element={<NoFussWebsites />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/resources/ai-discovery-guide" element={<AIDiscoveryGuide />} />
         <Route path="/website-care" element={<WebsiteCare />} />
         <Route path="/work/sarah-pickett" element={<SarahPickett />} />
         <Route path="/work/suds-scissors" element={<SudsScissors />} />
